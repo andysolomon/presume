@@ -1,0 +1,441 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Andrew Solomon
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+%customize entries left, center and right
+%\lhead{}
+%\chead{}
+%\rhead{}
+
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+\usepackage{color}
+
+%accent color
+\definecolor{sectcol}{RGB}{0,150,255}
+
+%dark background color
+\definecolor{bgcol}{RGB}{110,110,110}
+
+%light background / accent color
+\definecolor{softcol}{RGB}{225,225,225}
+
+
+%============================================================================%
+%
+%
+%	DEFINITIONS
+%
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow poiting to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}
+{\begin{tikzpicture}[scale=0.7]
+	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+	\begin{center}
+		\large\textcolor{sectcol}{\textbf{#1}}
+	\end{center}
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+\newcommand{\metasection}[2]
+{
+%\begin{tabular*}{1\textwidth}{r r}
+\footnotesize{#2} \hspace*{\fill} \footnotesize{#1}\\[1pt]
+%\end{tabular*}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by some paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	list of paragraphs
+%
+\newcommand{\cvevent}[4]
+{
+
+\begin{tabular*}{1\textwidth}{p{13.6cm}  x{3.9cm}}
+	\textbf{#2} - \textcolor{bgcol}{#3} &   \vspace{2.5pt}\textcolor{sectcol}{#1}
+\end{tabular*}
+
+\vspace{-8pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+	\foreach \desc in {#4}{
+		$\cdot$ \desc\\[3pt]
+	}
+	
+\vspace{3pt}
+}
+
+% creates a stretched box as 
+\newcommand{\cveventmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+
+%\begin{figure}[H]
+%\begin{flushright}
+%	\includegraphics[trim= 320 130 460 210,clip,width=0.2\linewidth]{myfoto.jpg}	%trimming relative to image size!
+%\end{flushright}
+%\end{figure}
+
+
+%---------------------------------------------------------------------------------------
+%	TITLE HEADLINE
+%----------------------------------------------------------------------------------------
+\vspace{-8pt}
+\begin{center}
+	\HUGE \textsc{Andrew Solomon} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	\small Software Developer
+\end{center}
+
+
+
+\vspace{6pt}
+
+
+%---------------------------------------------------------------------------------------
+%	META SECTION
+%----------------------------------------------------------------------------------------
+\metasection{Atlanta, Georgia}{\textbf{Location}}
+\metasection{medium.com/@andysolomon}{\textbf{Portfolio}}
+\metasection{andrewsolomon.edu@gmail.com}{\textbf{Email}}
+\vspace{-2pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+
+\normalsize
+
+\cvsection{Summary}
+Senior Software Engineer with 15+ years of experience specializing in Salesforce development, front-end engineering, and UI/UX design. Expert in Lightning Web Components, Apex, React, and modern JavaScript frameworks. Proven track record of leading technical teams and implementing enterprise-scale solutions for Fortune 500 companies. Passionate about creating efficient, accessible, and user-centric applications.
+
+\cvsection{Technical Skills}
+\vspace{-10pt}
+\begin{itemize}
+\item \textbf{Salesforce:} Lightning Web Components, Apex, Experience Cloud, SOQL, Flow, DevOps Center
+\item \textbf{Cloud \& Integration:} AWS (Lambda, S3, CloudFront), MuleSoft, DataDog, Vercel, GraphQL
+\item \textbf{Development:} JavaScript/TypeScript, React, Node.js
+\item \textbf{DevOps:} GitHub Actions, SFDX, CI/CD, Jest Testing, Version Control, Copado
+\end{itemize}
+
+\cvsection{Experience}
+
+\cvevent{2024 – Present}{Senior Salesforce Developer}{Pingwind}{
+    {Led development of FAST (Fiduciary Accountings Submission Tool) for Department of Veterans Affairs, a mission-critical Salesforce platform processing sensitive financial data for thousands of veterans},
+    {Using a combination of Flows, LWCs, and Experience Cloud, I designed and engineered a fully responsive Kiosk solution allowing Veterans to schedule walk-in and future appointments}
+    {Engineered dual-interface solution using Experience Cloud for external fiduciaries and Lightning Components for VA staff, achieving 99.9\% system availability},
+    {Developed secure document handling system using Platform Events and MuleSoft integration, processing 100K+ daily events while maintaining compliance with federal security requirements}
+}
+
+\cvevent{2022 – 2024}{Senior Salesforce Engineer}{MagMutual}{
+    {Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30\%},
+    {Built enterprise Git workflow system with GitHub Actions, reducing deployment time by 40\% across 5 development teams},
+    {Designed and implemented enterprise-grade file management system with custom trigger framework, achieving 90\%+ test coverage and reducing document processing time by 70\%},
+    {Developed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime},
+    {Implemented Jest testing suite achieving 95\% code coverage and WCAG 2.1 compliance},
+    {Built GraphQL-powered headless CMS integration, reducing content update time by 60\%},
+    {Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications}
+}
+
+\cvevent{2022 – Present}{Founder \& Principal Consultant}{Arcnology}{
+    {Built custom DataDog monitoring integration with Salesforce Apex, enabling proactive issue detection and 95\% reduction in incident response time},
+    {Implemented automated file classification and access control system, ensuring compliance with federal data protection standards while reducing manual processing},
+    {Designed AWS cloud infrastructure supporting high-volume government data processing, improving content delivery by 60\%},
+    {Created scalable component library based on U.S. Web Design Standards, accelerating development velocity by 40\%}
+}
+
+\pagebreak
+
+\cvevent{2018 – 2022}{Lead Frontend Engineer}{CodeScience}{
+    {Delivered enterprise Salesforce solutions for Fortune 500 clients including Ring Central and Ford, serving 50,000+ daily users},
+    {Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems},
+    {Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations},
+    {Implemented Redux state management pattern, reducing component complexity by 40\%},
+    {Mentored team of 8 developers in modern JavaScript practices and Salesforce development}
+}
+
+\cvevent{2018}{Senior JavaScript Developer}{CNN}{
+    {Developed cross-platform applications reaching 2M+ daily users across iOS, Roku, and Samsung devices},
+    {Built real-time news delivery system using React and Node.js, handling 100K+ concurrent users},
+    {Reduced application load time by 45\% through performance optimization},
+    {Led UI development for CNN's streaming platform launch}
+}
+
+\cvevent{2014 – 2018}{Senior Software Engineer}{Cox Automotive}{
+    {Architected Node.js microservices processing 500K+ daily automotive transactions},
+    {Led team of 6 frontend engineers, developing component library used across 20+ applications},
+    {Built React-based auction check-in system deployed to 100+ locations nationwide},
+    {Developed full-stack applications using Java Spring Boot, serving 50K+ automotive dealers}
+}
+
+\cvevent{2013}{Lead Frontend Developer}{Look-Listen}{
+    {Led frontend development for 10+ major brands including Alternative Apparel and Matchstic},
+    {Implemented responsive design system reducing mobile bounce rate by 35\%},
+    {Established modern development workflow with Node.js and Sass, improving team velocity by 50\%},
+    {Built social media integration platform handling 100K+ daily API calls},
+    {Managed AWS infrastructure supporting 1M+ monthly active users}
+}
+
+\cvevent{2010 – 2013}{Senior Software Developer}{Paper Tiger}{
+    {Developed SaaS platform serving 20K+ users with PHP and JavaScript},
+    {Implemented Google Docs API integration processing 50K+ documents monthly},
+    {Built single-page application improving customer support efficiency by 40\%},
+    {Designed Ruby on Rails asset pipeline reducing page load times by 60\%}
+}
+
+\cvsection{Education}
+
+\cvevent{2005 – 2010}{B.Sc. Computer Science}{Albany State University}{
+    {Graduated with 3.8 GPA, focus on algorithms and information security},
+    {Led development of security research platform used by 500+ students},
+    {Conducted DNA sequencing research using Perl and BioPerl},
+    {Published paper on information assurance in undergraduate research journal}
+}
+
+%--------------------------------------------------------------------------------------------------
+%	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
+%--------------------------------------------------------------------------------------------------
+
+\null
+\vspace*{\fill}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.andysolomon.github.com} $\cdot$ \textcolor{sectcol}{github.com/andysolomon}}}}
+\medskip 
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT END
+%
+%
+%
+%============================================================================%
+\end{document}
