@@ -81,7 +81,7 @@
 \usepackage[a4paper]{geometry}		
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.25cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+\geometry{top=1.25cm, bottom=1.25cm, left=1.5cm, right=1.5cm} 	
 
 %use customized header
 \usepackage{fancyhdr}				
@@ -324,7 +324,7 @@
 %	META SECTION
 %----------------------------------------------------------------------------------------
 \metasection{Atlanta, Georgia}{\textbf{Location}}
-\metasection{medium.com/@andysolomon}{\textbf{Portfolio}}
+\metasection{andrewsolomon.dev}{\textbf{Portfolio}}
 \metasection{andrewsolomon.edu@gmail.com}{\textbf{Email}}
 \vspace{-2pt}
 \textcolor{softcol}{\hrule}
@@ -333,46 +333,39 @@
 \normalsize
 
 \cvsection{Summary}
-Senior Software Engineer with 15+ years of experience specializing in Salesforce development, front-end engineering, and UI/UX design. Expert in Lightning Web Components, Apex, React, and modern JavaScript frameworks. Proven track record of leading technical teams and implementing enterprise-scale solutions for Fortune 500 companies. Passionate about creating efficient, accessible, and user-centric applications.
+Senior Salesforce Engineer \& Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies. Security-first approach with deep expertise in sharing models, persona-based testing, and CRUD/FLS enforcement.
 
 \cvsection{Technical Skills}
 \vspace{-10pt}
 \begin{itemize}
-\item \textbf{Salesforce:} Lightning Web Components, Apex, Experience Cloud, SOQL, Flow, DevOps Center
-\item \textbf{Cloud \& Integration:} AWS (Lambda, S3, CloudFront), MuleSoft, DataDog, Vercel, GraphQL
-\item \textbf{Development:} JavaScript/TypeScript, React, Node.js
-\item \textbf{DevOps:} GitHub Actions, SFDX, CI/CD, Jest Testing, Version Control, Copado
+\item \textbf{Salesforce:} Lightning Web Components, Apex, Experience Cloud, OmniStudio, 2GP Packages, Flow, SOQL
+\item \textbf{Architecture:} fflib patterns, FeatureManagement API, Sharing Model, SAML/JIT Provisioning
+\item \textbf{DevOps:} GitHub Actions, Copado, SFDX, semantic-release, Jest/Apex/Playwright testing pyramid
+\item \textbf{Integration:} AWS, MuleSoft, DataDog, GraphQL, Custom CLI Plugins
 \end{itemize}
 
 \cvsection{Experience}
 
-\cvevent{2024 – Present}{Senior Salesforce Developer}{Pingwind}{
-    {Led development of FAST (Fiduciary Accountings Submission Tool) for Department of Veterans Affairs, a mission-critical Salesforce platform processing sensitive financial data for thousands of veterans},
-    {Using a combination of Flows, LWCs, and Experience Cloud, I designed and engineered a fully responsive Kiosk solution allowing Veterans to schedule walk-in and future appointments}
-    {Engineered dual-interface solution using Experience Cloud for external fiduciaries and Lightning Components for VA staff, achieving 99.9\% system availability},
-    {Developed secure document handling system using Platform Events and MuleSoft integration, processing 100K+ daily events while maintaining compliance with federal security requirements}
+\cvevent{2025 -- Present}{Senior Salesforce Engineer / Technical Lead}{Thrivent Financial}{
+    {Managing 33 repositories with 4,700+ commits and 23+ 2nd-generation managed packages across enterprise Salesforce platform},
+    {Architected TCR (Team Change Request) platform with server-side infinite-load datatables and sticky-header dashboards, achieving sub-second load times at scale},
+    {Built B2C/B2E cross-org integration between Experience Cloud and internal org via adapter authentication patterns},
+    {Developed custom SF CLI plugins (\texttt{sf tf}) for profile consolidation, permission set modification, and package seeding},
+    {Created design token pipeline (Figma API $\rightarrow$ SLDS 2 CSS/JS) with 100-point validation rubric},
+    {Authored 8 engineering standards documents including PR review guidelines, Apex testing rubric, Jest standards, and 2GP pipeline guide},
+    {Established layered testing pyramid: Jest + sa11y → Apex (90\%+ coverage) → Playwright E2E}
 }
 
-\cvevent{2022 – 2024}{Senior Salesforce Engineer}{MagMutual}{
-    {Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30\%},
-    {Built enterprise Git workflow system with GitHub Actions, reducing deployment time by 40\% across 5 development teams},
-    {Designed and implemented enterprise-grade file management system with custom trigger framework, achieving 90\%+ test coverage and reducing document processing time by 70\%},
-    {Developed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime},
-    {Implemented Jest testing suite achieving 95\% code coverage and WCAG 2.1 compliance},
-    {Built GraphQL-powered headless CMS integration, reducing content update time by 60\%},
-    {Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications}
+\cvevent{2023 -- Present}{Founder \& Principal Consultant}{Arcnology}{
+    {Led VA PSIP (Personnel Security \& Investigations Program) development for background investigation case management (Pingwind)},
+    {Implemented custom sharing model with \texttt{\_\_Share} record creation via Invocable Actions and \texttt{without sharing} inner class bypass pattern (Pingwind)},
+    {Built SAML JIT provisioning handler with chained Queueables for user activation and permission set assignment (Pingwind)},
+    {Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30\% (MagMutual)},
+    {Built enterprise Git workflow system with GitHub Actions, reducing deployment time by 40\% across 5 development teams (MagMutual)},
+    {Developed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime (MagMutual)}
 }
 
-\cvevent{2022 – Present}{Founder \& Principal Consultant}{Arcnology}{
-    {Built custom DataDog monitoring integration with Salesforce Apex, enabling proactive issue detection and 95\% reduction in incident response time},
-    {Implemented automated file classification and access control system, ensuring compliance with federal data protection standards while reducing manual processing},
-    {Designed AWS cloud infrastructure supporting high-volume government data processing, improving content delivery by 60\%},
-    {Created scalable component library based on U.S. Web Design Standards, accelerating development velocity by 40\%}
-}
-
-\pagebreak
-
-\cvevent{2018 – 2022}{Lead Frontend Engineer}{CodeScience}{
+\cvevent{2018 -- 2022}{Lead Frontend Engineer}{CodeScience}{
     {Delivered enterprise Salesforce solutions for Fortune 500 clients including Ring Central and Ford, serving 50,000+ daily users},
     {Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems},
     {Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations},
@@ -387,7 +380,7 @@ Senior Software Engineer with 15+ years of experience specializing in Salesforce
     {Led UI development for CNN's streaming platform launch}
 }
 
-\cvevent{2014 – 2018}{Senior Software Engineer}{Cox Automotive}{
+\cvevent{2014 -- 2018}{Senior Software Engineer}{Cox Automotive}{
     {Architected Node.js microservices processing 500K+ daily automotive transactions},
     {Led team of 6 frontend engineers, developing component library used across 20+ applications},
     {Built React-based auction check-in system deployed to 100+ locations nationwide},
@@ -402,7 +395,7 @@ Senior Software Engineer with 15+ years of experience specializing in Salesforce
     {Managed AWS infrastructure supporting 1M+ monthly active users}
 }
 
-\cvevent{2010 – 2013}{Senior Software Developer}{Paper Tiger}{
+\cvevent{2010 -- 2013}{Senior Software Developer}{Paper Tiger}{
     {Developed SaaS platform serving 20K+ users with PHP and JavaScript},
     {Implemented Google Docs API integration processing 50K+ documents monthly},
     {Built single-page application improving customer support efficiency by 40\%},
@@ -411,12 +404,20 @@ Senior Software Engineer with 15+ years of experience specializing in Salesforce
 
 \cvsection{Education}
 
-\cvevent{2005 – 2010}{B.Sc. Computer Science}{Albany State University}{
+\cvevent{2005 -- 2010}{B.Sc. Computer Science}{Albany State University}{
     {Graduated with 3.8 GPA, focus on algorithms and information security},
     {Led development of security research platform used by 500+ students},
     {Conducted DNA sequencing research using Perl and BioPerl},
     {Published paper on information assurance in undergraduate research journal}
 }
+
+\cvsection{Certifications}
+\vspace{-10pt}
+\begin{itemize}
+\item Copado Fundamentals I -- Source Format Pipeline
+\item Copado Fundamentals I -- Metadata Pipeline
+\item Copado Fundamentals II -- Metadata Pipeline
+\end{itemize}
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
@@ -424,7 +425,7 @@ Senior Software Engineer with 15+ years of experience specializing in Salesforce
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{www.andysolomon.github.com} $\cdot$ \textcolor{sectcol}{github.com/andysolomon}}}}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{linkedin.com/in/andysolomon} $\cdot$ \textcolor{sectcol}{github.com/andysolomon}}}}
 \medskip 
 
 
