@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  29 APR 2026 11:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  8 MAY 2026 13:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,69 +931,54 @@ LaTeX Font Info:    Font shape `T1/Raleway-OsF/bold/n' aliased to
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 341.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 357.
+(Font)              <7> on input line 360.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 357.
+(Font)              <5> on input line 360.
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 357--357
-[][] 
- []
-
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family Raleway-OsF in TS1 encoding.
-            Default family used instead on input line 357.
-
-LaTeX Font Warning: Font shape `T1/cmss/regular/n' undefined
-(Font)              using `T1/cmss/m/n' instead on input line 357.
-
-
-LaTeX Font Warning: Font shape `TS1/cmss/regular/n' undefined
-(Font)              using `TS1/cmss/m/n' instead
-(Font)              for symbol `textrightarrow' on input line 357.
-
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family Raleway-OsF in TS1 encoding.
-            Default family used instead on input line 357.
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--357
-
- []
-
-
-Overfull \hbox (9.77357pt too wide) in alignment at lines 366--366
+Overfull \hbox (9.77357pt too wide) in alignment at lines 360--360
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--366
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 374--374
+Overfull \hbox (9.77357pt too wide) in alignment at lines 369--369
 [][] 
  []
 
 
-Overfull \hbox (1.98744pt too wide) in paragraph at lines 374--374
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
+
+ []
+
+
+Overfull \hbox (9.77357pt too wide) in alignment at lines 377--377
+[][] 
+ []
+
+
+Overfull \hbox (1.98744pt too wide) in paragraph at lines 377--377
 []$\OMS/cmsy/m/n/10 ^^A$ \T1/Raleway-OsF/m/n/10 De-liv-ered en-ter-prise Sales-
 force so-lu-tions for For-tune 500 clients in-clud-ing Ring Cen-tral and Ford, 
 serv-ing 50,000+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--374
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
 
  []
 
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/sl' in size <10> not ava
 ilable
 (Font)              Font shape `T1/Raleway-OsF/regular/it' tried instead on inp
-ut line 375.
+ut line 377.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/it' aliased to
-(Font)              `T1/Raleway-OsF/m/it' on input line 375.
+(Font)              `T1/Raleway-OsF/m/it' on input line 377.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 375.
+(Font)              scaled to size 10.0pt on input line 377.
 
 Package fancyhdr Warning: \headheight is too small (-5.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -1010,57 +995,57 @@ Overfull \vbox (5.0pt too high) has occurred while \output is active []
 r/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_3r74if.enc}{/usr
 /local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_itoun2.enc}{/usr/
 local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_2drkug.enc}]
-Overfull \hbox (9.77357pt too wide) in alignment at lines 381--381
+Overfull \hbox (9.77357pt too wide) in alignment at lines 384--384
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--381
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 388--388
+Overfull \hbox (9.77357pt too wide) in alignment at lines 391--391
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--388
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 396--396
+Overfull \hbox (9.77357pt too wide) in alignment at lines 399--399
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--396
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 403--403
+Overfull \hbox (9.77357pt too wide) in alignment at lines 406--406
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 403--403
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 412--412
+Overfull \hbox (9.77357pt too wide) in alignment at lines 415--415
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--412
+Underfull \hbox (badness 10000) in paragraph at lines 415--415
 
  []
 
 
-Overfull \hbox (134.03741pt too wide) in paragraph at lines 428--430
+Overfull \hbox (134.03741pt too wide) in paragraph at lines 431--433
 [] [][][][][][]
  []
 
@@ -1080,29 +1065,23 @@ Overfull \vbox (5.0pt too high) has occurred while \output is active []
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
  ) 
 Here is how much of TeX's memory you used:
- 16937 strings out of 469006
- 369632 string characters out of 5454814
- 780177 words of memory out of 5000000
- 45302 multiletter control sequences out of 15000+600000
- 793686 words of font info for 63 fonts, out of 8000000 for 9000
+ 16925 strings out of 469006
+ 369457 string characters out of 5454814
+ 781177 words of memory out of 5000000
+ 45293 multiletter control sequences out of 15000+600000
+ 792271 words of font info for 60 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  84i,11n,104p,548b,325s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/andrewsolomon/Library/texlive/2026basic/texmf-var/fonts/pk/ljfour/jk
-nappen/ec/tcss1000.600pk> </Users/andrewsolomon/Library/texlive/2026basic/texmf
--var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk></usr/local/texlive/2026basic/t
-exmf-dist/fonts/type1/impallari/raleway/Raleway-Bold.pfb></usr/local/texlive/20
-26basic/texmf-dist/fonts/type1/impallari/raleway/Raleway-Regular.pfb></usr/loca
-l/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (2 pages, 48263 bytes).
+</usr/local/texlive/2026basic/texmf-dist/fonts/type1/impallari/raleway/Ralewa
+y-Bold.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/impallari/ralew
+ay/Raleway-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (2 pages, 43377 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
