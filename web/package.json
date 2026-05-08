@@ -9,7 +9,7 @@
     "predev": "npm run sync",
     "dev": "lwr dev",
     "prebuild": "npm run sync",
-    "build": "lwr build && rm -rf site/portfolio && cp -r static/portfolio site/portfolio",
+    "build": "rm -rf site && lwr build && rm -rf site/portfolio && cp -r static/portfolio site/portfolio",
     "serve": "lwr serve",
     "start": "lwr start",
     "typecheck": "tsc --noEmit"
