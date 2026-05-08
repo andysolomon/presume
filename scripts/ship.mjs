@@ -109,9 +109,14 @@ function main() {
 
   step(`push to origin/${branch}`, () => run(`git push origin ${branch}`));
 
+  step('deploy to Vercel production', () => {
+    // Runs from web/ where .vercel/project.json lives. --yes skips the
+    // "Set up and deploy" prompt.
+    run('vercel --prod --yes', { cwd: resolve(repoRoot, 'web') });
+  });
+
   console.log('');
-  console.log('✓ Ship complete. Vercel will auto-deploy from the push.');
-  console.log('  https://vercel.com/andrewsolomonedus-projects/andrewsolomon.dev');
+  console.log('✓ Ship complete. Live at https://andrewsolomon.dev/');
 }
 
 try {

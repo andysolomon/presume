@@ -9,11 +9,11 @@ npm run ship                  # auto commit message
 npm run ship -- -m "message"  # explicit message
 ```
 
-Does the full release in order: sync resume data, build PDF, build LWR site, typecheck, verify artifacts exist and are non-empty, `git add -u`, commit, push to `origin/main`. Vercel auto-deploys from the push.
+Does the full release in order: sync resume data, build PDF, build LWR site, typecheck, verify artifacts, `git add -A`, commit, push to `origin/main`, `vercel --prod` from `web/`.
 
 Refuses to run from any branch other than `main`. Bails on the first failure.
 
-> **Vercel one-time setup:** the project's **Root Directory** must be set to `web` (Project Settings → General). Without that, Vercel will try to run the root build script which calls `pdflatex` and fails.
+The Vercel deploy step uses the CLI directly (not git auto-deploy), so it works regardless of whether the project is git-connected in Vercel.
 
 ## One-shot build (no commit/push)
 
