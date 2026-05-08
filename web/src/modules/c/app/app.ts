@@ -18,11 +18,12 @@ type RenderedEvent = {
   key: string;
   date: string;
   title: string;
+  companySeparator: string;
   company: string;
+  companyHref: string;
+  hasCompanyLink: boolean;
   bullets: { key: string; text: string }[];
 };
-
-type RenderedCert = { key: string; value: string };
 
 type RenderedFooter = { key: string; label: string; href: string };
 
@@ -41,6 +42,14 @@ export default class App extends LightningElement {
 
   get header() {
     return resume.header;
+  }
+
+  get hasNameLink(): boolean {
+    return Boolean(resume.header.nameHref);
+  }
+
+  get nameHref(): string {
+    return resume.header.nameHref;
   }
 
   get summary(): string {
@@ -78,10 +87,6 @@ export default class App extends LightningElement {
     return resume.education.map((e, i) => this.toRenderedEvent(e, `edu-${i}`));
   }
 
-  get certifications(): RenderedCert[] {
-    return resume.certifications.map((c, i) => ({ key: `cert-${i}`, value: c }));
-  }
-
   get footerLinks(): RenderedFooter[] {
     return resume.footer.map((f, i) => ({
       key: `footer-${i}`,
@@ -105,7 +110,10 @@ export default class App extends LightningElement {
       key: keyPrefix,
       date: e.date,
       title: e.title,
-      company: ` — ${e.company}`,
+      companySeparator: ' — ',
+      company: e.company,
+      companyHref: e.companyHref,
+      hasCompanyLink: Boolean(e.companyHref),
       bullets: e.bullets.map((text, j) => ({ key: `${keyPrefix}-b${j}`, text })),
     };
   }

@@ -1,10 +1,32 @@
 <template>
+  <a
+    class="pdf-export"
+    href="/assets/andrewsolomon.pdf"
+    download="andrewsolomon-resume.pdf"
+    aria-label="Download Andrew Solomon's resume as a PDF"
+  >
+    <svg class="pdf-export-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
+      <path d="M7 1.5v7.4M3.6 5.5 7 8.9l3.4-3.4M2.5 11.5h9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"/>
+    </svg>
+    <span class="pdf-export-label">Export PDF</span>
+  </a>
   <c-theme-toggle theme={theme} ontoggle={handleThemeToggle}></c-theme-toggle>
 
   <main class="resume" aria-label="Andrew Solomon — Resume">
     <header class="title-block">
       <h1 class="title-line">
-        <span class="name">{header.name}</span>
+        <template lwc:if={hasNameLink}>
+          <a
+            class="name name-link"
+            href={nameHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Andrew Solomon on LinkedIn"
+          >{header.name}</a>
+        </template>
+        <template lwc:else>
+          <span class="name">{header.name}</span>
+        </template>
         <span class="bar" aria-hidden="true"></span>
         <span class="name">{header.title}</span>
       </h1>
@@ -46,8 +68,12 @@
         <article key={e.key} class="event">
           <header class="event-header">
             <h3 class="event-title-line">
-              <strong class="event-title">{e.title}</strong>
-              <span class="event-company">{e.company}</span>
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
             </h3>
             <time class="event-date">{e.date}</time>
           </header>
@@ -67,8 +93,12 @@
         <article key={e.key} class="event">
           <header class="event-header">
             <h3 class="event-title-line">
-              <strong class="event-title">{e.title}</strong>
-              <span class="event-company">{e.company}</span>
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
             </h3>
             <time class="event-date">{e.date}</time>
           </header>
@@ -80,15 +110,6 @@
           </ul>
         </article>
       </template>
-    </section>
-
-    <section class="block">
-      <h2 class="section-header">Certifications</h2>
-      <ul class="skills">
-        <template for:each={certifications} for:item="c">
-          <li key={c.key}>{c.value}</li>
-        </template>
-      </ul>
     </section>
 
     <footer class="footer">

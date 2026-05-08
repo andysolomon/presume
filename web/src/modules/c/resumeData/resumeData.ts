@@ -6,17 +6,17 @@ export type CvEvent = {
   date: string;
   title: string;
   company: string;
+  companyHref: string;
   bullets: string[];
 };
 export type FooterLink = { label: string; href: string };
 export type Resume = {
-  header: { name: string; title: string; subtitle: string };
+  header: { name: string; title: string; subtitle: string; nameHref: string };
   meta: MetaItem[];
   summary: string;
   skills: SkillItem[];
   experience: CvEvent[];
   education: CvEvent[];
-  certifications: string[];
   footer: FooterLink[];
 };
 
@@ -24,7 +24,8 @@ export const resume: Resume = {
   "header": {
     "name": "Andrew Solomon",
     "title": "Resume",
-    "subtitle": "Software Developer"
+    "subtitle": "Software Developer",
+    "nameHref": "https://www.linkedin.com/in/andrew-solomon-44550a24/"
   },
   "meta": [
     {
@@ -72,6 +73,7 @@ export const resume: Resume = {
       "date": "2025 — Present",
       "title": "Senior Salesforce Engineer / Technical Lead",
       "company": "Thrivent Financial",
+      "companyHref": "https://www.thrivent.com",
       "bullets": [
         "Built and scaled 2GP package pipelines across 33+ repositories, managing multiple SFDX projects in parallel across multi-tier environments",
         "Developed Lightning Web Components with GraphQL and built Java-based connected apps for external clients",
@@ -87,6 +89,7 @@ export const resume: Resume = {
       "date": "2023 — 2024",
       "title": "Senior Salesforce Developer",
       "company": "MagMutual",
+      "companyHref": "https://www.magmutual.com",
       "bullets": [
         "Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30%",
         "Architected enterprise Git workflow system with GitHub Actions, reducing deployment time by 40% across 5 development teams",
@@ -100,6 +103,7 @@ export const resume: Resume = {
       "date": "2018 — 2022",
       "title": "Lead Frontend Engineer",
       "company": "CodeScience",
+      "companyHref": "https://www.codescience.com",
       "bullets": [
         "Delivered enterprise Salesforce solutions for Fortune 500 clients including Ring Central and Ford, serving 50,000+ daily users",
         "Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems",
@@ -112,6 +116,7 @@ export const resume: Resume = {
       "date": "2018",
       "title": "Senior JavaScript Developer",
       "company": "CNN",
+      "companyHref": "https://www.cnn.com",
       "bullets": [
         "Developed cross-platform applications reaching 2M+ daily users across iOS, Roku, and Samsung devices",
         "Built real-time news delivery system using React and Node, handling 100K+ concurrent users",
@@ -123,6 +128,7 @@ export const resume: Resume = {
       "date": "2014 — 2018",
       "title": "Senior Software Engineer",
       "company": "Cox Automotive",
+      "companyHref": "https://www.coxautoinc.com",
       "bullets": [
         "Architected Node microservices processing 500K+ daily automotive transactions",
         "Led team of 6 frontend engineers, developing component library used across 20+ applications",
@@ -134,6 +140,7 @@ export const resume: Resume = {
       "date": "2013",
       "title": "Lead Frontend Developer",
       "company": "Look-Listen",
+      "companyHref": "https://www.linkedin.com/company/look-listen/",
       "bullets": [
         "Led frontend development for 10+ major brands including Alternative Apparel and Matchstic",
         "Implemented responsive design system reducing mobile bounce rate by 35%",
@@ -146,6 +153,7 @@ export const resume: Resume = {
       "date": "2010 — 2013",
       "title": "Senior Software Developer",
       "company": "Paper Tiger",
+      "companyHref": "https://www.linkedin.com/company/the-monticello-corporation/",
       "bullets": [
         "Developed SaaS platform serving 20K+ users with PHP and JavaScript",
         "Implemented Google Docs API integration processing 50K+ documents monthly",
@@ -159,6 +167,7 @@ export const resume: Resume = {
       "date": "2005 — 2010",
       "title": "B.Sc. Computer Science",
       "company": "Albany State University",
+      "companyHref": "https://www.asurams.edu",
       "bullets": [
         "Graduated with 3.8 GPA, focus on algorithms and information security",
         "Led development of security research platform used by 500+ students",
@@ -166,11 +175,6 @@ export const resume: Resume = {
         "Published paper on information assurance in undergraduate research journal"
       ]
     }
-  ],
-  "certifications": [
-    "Copado Fundamentals I — Source Format Pipeline",
-    "Copado Fundamentals I — Metadata Pipeline",
-    "Copado Fundamentals II — Metadata Pipeline"
   ],
   "footer": [
     {

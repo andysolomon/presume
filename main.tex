@@ -175,6 +175,12 @@
 \pagecolor{pagecol}
 
 
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS  (loaded last; hidelinks keeps typography identical to the un-linked source)
+%----------------------------------------------------------------------------------------
+\usepackage[hidelinks]{hyperref}
+
+
 %============================================================================%
 %
 %
@@ -340,7 +346,7 @@
 %----------------------------------------------------------------------------------------
 \vspace{-8pt}
 \begin{center}
-	\HUGE \textsc{Andrew Solomon} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
+	\HUGE \textsc{\href{https://www.linkedin.com/in/andrew-solomon-44550a24/}{Andrew Solomon}} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{Resume}\\[2pt]
 	\small Software Developer
 \end{center}
 
@@ -377,7 +383,7 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
 
 \cvsection{Experience}
 
-\cvevent{2025 -- Present}{Senior Salesforce Engineer / Technical Lead}{Thrivent Financial}{
+\cvevent{2025 -- Present}{Senior Salesforce Engineer / Technical Lead}{\href{https://www.thrivent.com}{Thrivent Financial}}{
     {Built and scaled 2GP package pipelines across 33+ repositories, managing multiple SFDX projects in parallel across multi-tier environments},
     {Developed Lightning Web Components with GraphQL and built Java-based connected apps for external clients},
     {Architected a Salesforce Bulk API 2.0 + Amazon S3 pipeline that streams large-scale query results to S3 and generates custom object artifacts for downstream packaging and analytics},
@@ -388,7 +394,7 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
     {Authored engineering, DevOps, and Salesforce documentation; drove cross-team feedback loops with design and customers in Agile/Kanban}
 }
 
-\cvevent{2023 -- 2024}{Senior Salesforce Developer}{MagMutual}{
+\cvevent{2023 -- 2024}{Senior Salesforce Developer}{\href{https://www.magmutual.com}{MagMutual}}{
     {Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30\%},
     {Architected enterprise Git workflow system with GitHub Actions, reducing deployment time by 40\% across 5 development teams},
     {Developed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime},
@@ -397,7 +403,7 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
     {Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications}
 }
 
-\cvevent{2018 -- 2022}{Lead Frontend Engineer}{CodeScience}{
+\cvevent{2018 -- 2022}{Lead Frontend Engineer}{\href{https://www.codescience.com}{CodeScience}}{
     {Delivered enterprise Salesforce solutions for Fortune 500 clients including Ring Central and Ford, serving 50,000+ daily users},
     {Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems},
     {Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations},
@@ -405,21 +411,21 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
     {Mentored team of 8 developers in modern JavaScript practices and Salesforce development}
 }
 
-\cvevent{2018}{Senior JavaScript Developer}{CNN}{
+\cvevent{2018}{Senior JavaScript Developer}{\href{https://www.cnn.com}{CNN}}{
     {Developed cross-platform applications reaching 2M+ daily users across iOS, Roku, and Samsung devices},
     {Built real-time news delivery system using React and Node, handling 100K+ concurrent users},
     {Reduced application load time by 45\% through performance optimization},
     {Led UI development for CNN's streaming platform launch}
 }
 
-\cvevent{2014 -- 2018}{Senior Software Engineer}{Cox Automotive}{
+\cvevent{2014 -- 2018}{Senior Software Engineer}{\href{https://www.coxautoinc.com}{Cox Automotive}}{
     {Architected Node microservices processing 500K+ daily automotive transactions},
     {Led team of 6 frontend engineers, developing component library used across 20+ applications},
     {Built React-based auction check-in system deployed to 100+ locations nationwide},
     {Developed full-stack applications using Java Spring Boot, serving 50K+ automotive dealers}
 }
 
-\cvevent{2013}{Lead Frontend Developer}{Look-Listen}{
+\cvevent{2013}{Lead Frontend Developer}{\href{https://www.linkedin.com/company/look-listen/}{Look-Listen}}{
     {Led frontend development for 10+ major brands including Alternative Apparel and Matchstic},
     {Implemented responsive design system reducing mobile bounce rate by 35\%},
     {Established modern development workflow with Node and Sass, improving team velocity by 50\%},
@@ -427,7 +433,7 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
     {Managed AWS infrastructure supporting 1M+ monthly active users}
 }
 
-\cvevent{2010 -- 2013}{Senior Software Developer}{Paper Tiger}{
+\cvevent{2010 -- 2013}{Senior Software Developer}{\href{https://www.linkedin.com/company/the-monticello-corporation/}{Paper Tiger}}{
     {Developed SaaS platform serving 20K+ users with PHP and JavaScript},
     {Implemented Google Docs API integration processing 50K+ documents monthly},
     {Built single-page application improving customer support efficiency by 40\%},
@@ -436,20 +442,12 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
 
 \cvsection{Education}
 
-\cvevent{2005 -- 2010}{B.Sc. Computer Science}{Albany State University}{
+\cvevent{2005 -- 2010}{B.Sc. Computer Science}{\href{https://www.asurams.edu}{Albany State University}}{
     {Graduated with 3.8 GPA, focus on algorithms and information security},
     {Led development of security research platform used by 500+ students},
     {Conducted DNA sequencing research using Perl and BioPerl},
     {Published paper on information assurance in undergraduate research journal}
 }
-
-\cvsection{Certifications}
-\vspace{-10pt}
-\begin{itemize}
-\item Copado Fundamentals I -- Source Format Pipeline
-\item Copado Fundamentals I -- Metadata Pipeline
-\item Copado Fundamentals II -- Metadata Pipeline
-\end{itemize}
 
 %--------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 

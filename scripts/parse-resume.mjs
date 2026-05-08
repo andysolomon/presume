@@ -37,6 +37,9 @@ function deLatex(s) {
     .replace(/\\\$/g, '$')
     .replace(/\\\{/g, '{')
     .replace(/\\\}/g, '}')
+    // \href{url}{text} -> text. Real href extraction (with the URL) happens via extractHref;
+    // this is a defensive fallback so any stray \href in body copy still renders cleanly.
+    .replace(/\\href\{[^{}]*\}\{([^{}]*)\}/g, '$1')
     // textbf{x} -> x (we render strong via template, not content)
     .replace(/\\textbf\{([^{}]*)\}/g, '$1')
     .replace(/\\textit\{([^{}]*)\}/g, '$1')
@@ -47,6 +50,23 @@ function deLatex(s) {
     .replace(/~/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+// If `s` is (after trimming) a `\href{url}{text}` invocation, return { url, text }.
+// Brace-aware so URLs and text containing nested braces still parse correctly.
+function extractHref(s) {
+  const t = s.trim();
+  if (!t.startsWith('\\href')) return null;
+  const open1 = t.indexOf('{', '\\href'.length);
+  if (open1 === -1) return null;
+  const close1 = matchBrace(t, open1);
+  const open2 = t.indexOf('{', close1 + 1);
+  if (open2 === -1) return null;
+  const close2 = matchBrace(t, open2);
+  return {
+    url: t.slice(open1 + 1, close1).trim(),
+    text: t.slice(open2 + 1, close2),
+  };
 }
 
 // Find the matching closing brace for a `{` at index `openIdx` in `src`.
@@ -112,12 +132,33 @@ function unwrapBraces(s) {
 }
 
 function parseHeader(src) {
-  const titleBlock = src.match(/\\HUGE[^]*?\\textsc\{([^}]+)\}[^]*?\\textsc\{([^}]+)\}/);
+  // The title block is `\HUGE \textsc{<name>} <bar> \textsc{<title>}`. Either textsc body may
+  // be wrapped in `\href{url}{text}` for the LinkedIn link on the name; brace-match through it.
+  const huge = src.indexOf('\\HUGE');
   const subtitleMatch = src.match(/\\small\s+([^\\\n]+)/);
-  return {
-    name: titleBlock ? deLatex(titleBlock[1]) : 'Andrew Solomon',
-    title: titleBlock ? deLatex(titleBlock[2]) : 'Resume',
+  const fallback = {
+    name: 'Andrew Solomon',
+    title: 'Resume',
     subtitle: subtitleMatch ? deLatex(subtitleMatch[1]) : '',
+    nameHref: '',
+  };
+  if (huge === -1) return fallback;
+
+  const ts1Idx = src.indexOf('\\textsc{', huge);
+  if (ts1Idx === -1) return fallback;
+  const ts1 = readArg(src, ts1Idx + '\\textsc'.length);
+  const ts2Idx = src.indexOf('\\textsc{', ts1.end);
+  if (ts2Idx === -1) return fallback;
+  const ts2 = readArg(src, ts2Idx + '\\textsc'.length);
+
+  const href1 = extractHref(ts1.body);
+  const href2 = extractHref(ts2.body);
+
+  return {
+    name: deLatex(href1 ? href1.text : ts1.body),
+    title: deLatex(href2 ? href2.text : ts2.body),
+    subtitle: subtitleMatch ? deLatex(subtitleMatch[1]) : '',
+    nameHref: href1 ? href1.url : '',
   };
 }
 
@@ -196,10 +237,12 @@ function parseCvEvents(body) {
       .map((s) => unwrapBraces(s))
       .map((s) => deLatex(s))
       .filter(Boolean);
+    const cHref = extractHref(c.body);
     events.push({
       date: deLatex(a.body),
       title: deLatex(b.body),
-      company: deLatex(c.body),
+      company: deLatex(cHref ? cHref.text : c.body),
+      companyHref: cHref ? cHref.url : '',
       bullets,
     });
     re.lastIndex = d.end;
@@ -240,7 +283,6 @@ function buildResume(tex) {
     skills: [],
     experience: [],
     education: [],
-    certifications: [],
     footer,
   };
 
@@ -254,8 +296,6 @@ function buildResume(tex) {
       result.experience = parseCvEvents(s.body);
     } else if (key === 'education') {
       result.education = parseCvEvents(s.body);
-    } else if (key === 'certifications') {
-      result.certifications = parseItemize(s.body).map((i) => i.value);
     }
   }
   return result;
@@ -270,17 +310,17 @@ export type CvEvent = {
   date: string;
   title: string;
   company: string;
+  companyHref: string;
   bullets: string[];
 };
 export type FooterLink = { label: string; href: string };
 export type Resume = {
-  header: { name: string; title: string; subtitle: string };
+  header: { name: string; title: string; subtitle: string; nameHref: string };
   meta: MetaItem[];
   summary: string;
   skills: SkillItem[];
   experience: CvEvent[];
   education: CvEvent[];
-  certifications: string[];
   footer: FooterLink[];
 };
 
@@ -305,7 +345,6 @@ function main() {
     skills: resume.skills.length,
     experience: resume.experience.length,
     education: resume.education.length,
-    certifications: resume.certifications.length,
   };
   console.log(`parse-resume: wrote ${outPath}`);
   console.log(`  ${JSON.stringify(counts)}`);
