@@ -244,7 +244,8 @@
   outline: none;
 }
 
-.footer-sep {
+.footer-link:not(:last-child)::after {
+  content: '·';
   color: var(--color-accent);
   padding: 0 0.5em;
 }

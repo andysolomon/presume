@@ -1,0 +1,23 @@
+{
+  "name": "andrewsolomon-resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "main.tex is the source of truth. Builds main.pdf and an LWR website that renders the same content.",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/parse-resume.mjs",
+    "pdf": "pdflatex -interaction=nonstopmode -halt-on-error main.tex",
+    "pdf:twice": "npm run pdf && npm run pdf",
+    "web:install": "npm --prefix web install",
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "web:typecheck": "npm --prefix web run typecheck",
+    "dev": "npm run sync && npm run web:dev",
+    "build": "npm run sync && npm run pdf && npm run web:build",
+    "ship": "node scripts/ship.mjs",
+    "clean": "rm -f main.aux main.log main.out && rm -rf web/site web/dist web/__lwr_cache__ web/.lwr"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

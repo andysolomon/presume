@@ -8,3 +8,6 @@ __lwr_cache__
 .env
 .env.local
 .vercel
+
+# Generated from main.tex by scripts/parse-resume.mjs
+src/modules/c/resumeData/resumeData.ts

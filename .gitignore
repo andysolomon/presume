@@ -3,3 +3,13 @@
 
 # Claude Code user-local harness settings (per-machine, not shared)
 .claude/settings.local.json
+
+# Node
+node_modules
+
+# LaTeX build artifacts (main.pdf is committed; .aux/.log are not)
+main.aux
+main.log
+main.out
+main.toc
+main.synctex.gz
