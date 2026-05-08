@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "site",
+  "framework": null,
+  "trailingSlash": false,
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/portfolio/index.html", "destination": "/portfolio", "permanent": false }
+  ]
+}

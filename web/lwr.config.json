@@ -1,0 +1,26 @@
+{
+  "lwc": {
+    "modules": [{ "dir": "$rootDir/src/modules" }]
+  },
+  "moduleProviders": [
+    "@lwrjs/app-service/moduleProvider",
+    "@lwrjs/lwc-module-provider",
+    "@lwrjs/npm-module-provider"
+  ],
+  "assets": [
+    { "alias": "assets", "dir": "$rootDir/src/assets", "urlPath": "/assets" },
+    { "alias": "styles", "dir": "$rootDir/src/styles", "urlPath": "/styles" }
+  ],
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "rootComponent": "c/app",
+      "layoutTemplate": "$rootDir/src/layouts/main.html",
+      "properties": {
+        "title": "Andrew Solomon — Resume",
+        "description": "Senior Salesforce Engineer & Technical Lead. Bridge identity: deep platform credibility plus modern web/AI craftsmanship."
+      }
+    }
+  ]
+}

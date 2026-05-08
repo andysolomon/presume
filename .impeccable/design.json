@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-08T00:00:00Z",
+  "title": "Design System: Andrew Solomon Resume",
+  "extensions": {
+    "colorMeta": {
+      "page-white": {
+        "role": "neutral",
+        "displayName": "Page White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(92% 0 0)",
+          "oklch(99% 0 0)"
+        ]
+      },
+      "type-black": {
+        "role": "neutral",
+        "displayName": "Type Black",
+        "canonical": "oklch(0% 0 0)",
+        "tonalRamp": [
+          "oklch(8% 0 0)",
+          "oklch(18% 0 0)",
+          "oklch(32% 0 0)",
+          "oklch(46% 0 0)",
+          "oklch(60% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(86% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "mid-type-grey": {
+        "role": "neutral",
+        "displayName": "Mid-Type Grey",
+        "canonical": "oklch(50% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(68% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(94% 0 0)"
+        ]
+      },
+      "whisper-hairline": {
+        "role": "neutral",
+        "displayName": "Whisper Hairline Grey",
+        "canonical": "oklch(90% 0 0)",
+        "tonalRamp": [
+          "oklch(20% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(78% 0 0)",
+          "oklch(86% 0 0)",
+          "oklch(92% 0 0)",
+          "oklch(97% 0 0)"
+        ]
+      },
+      "legacy-process-blue": {
+        "role": "primary",
+        "displayName": "Legacy Process Blue (anti-pattern, slated for replacement on dark-mode branch)",
+        "canonical": "oklch(67% 0.18 240)",
+        "tonalRamp": [
+          "oklch(20% 0.08 240)",
+          "oklch(32% 0.12 240)",
+          "oklch(44% 0.16 240)",
+          "oklch(55% 0.18 240)",
+          "oklch(67% 0.18 240)",
+          "oklch(78% 0.14 240)",
+          "oklch(88% 0.08 240)",
+          "oklch(96% 0.03 240)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Title Display",
+        "purpose": "The title block — 'Andrew Solomon | Resume' in HUGE small-caps. Appears once at the top of the page."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Centered \\cvsection markers (Summary, Technical Skills, Experience, Education, Certifications). 12pt bold legacy-process-blue."
+      },
+      "title": {
+        "displayName": "Event Title",
+        "purpose": "Bold role title inside \\cvevent (e.g. 'Senior Salesforce Engineer / Technical Lead'). Always paired with mid-type-grey company name."
+      },
+      "body": {
+        "displayName": "Body Text",
+        "purpose": "Summary paragraph and every bullet. The default text role."
+      },
+      "label": {
+        "displayName": "Meta Label",
+        "purpose": "Meta block — Location / Portfolio / Email rows. footnotesize (8pt)."
+      },
+      "subtitle": {
+        "displayName": "Title Subtitle",
+        "purpose": "'Software Developer' line beneath the title block. small (9pt), centered."
+      }
+    },
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [
+      { "name": "a4", "value": "210mm × 297mm" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Title Block",
+      "kind": "custom",
+      "refersTo": "title-block",
+      "description": "The single header element of the resume — name, vertical bar, 'Resume', subtitle.",
+      "html": "<header class=\"ds-title-block\"><h1 class=\"ds-title-line\"><span class=\"ds-title-name\">Andrew Solomon</span><span class=\"ds-title-bar\"></span><span class=\"ds-title-name\">Resume</span></h1><p class=\"ds-title-subtitle\">Software Developer</p></header>",
+      "css": ".ds-title-block { text-align: center; font-family: Raleway, sans-serif; padding: 0; } .ds-title-line { display: inline-flex; align-items: center; gap: 12pt; font-size: 28pt; font-weight: 400; line-height: 1; letter-spacing: 0.08em; margin: 0; color: #000; } .ds-title-name { font-variant: small-caps; text-transform: uppercase; } .ds-title-bar { display: inline-block; width: 1mm; height: 0.9cm; background: #0096FF; } .ds-title-subtitle { font-size: 9pt; font-weight: 400; margin: 4pt 0 0; color: #000; }"
+    },
+    {
+      "name": "Section Header",
+      "kind": "custom",
+      "refersTo": "section-header",
+      "description": "Top-level section marker (Summary, Experience, etc.). Centered, bold, accent-colored.",
+      "html": "<h2 class=\"ds-section-header\">Experience</h2>",
+      "css": ".ds-section-header { text-align: center; font-family: Raleway, sans-serif; font-size: 12pt; font-weight: 700; color: #0096FF; margin: 0 0 6pt; padding: 0; }"
+    },
+    {
+      "name": "CV Event Header",
+      "kind": "custom",
+      "refersTo": "event-title",
+      "description": "Two-column header inside \\cvevent — bold role + mid-grey company on the left, accent-blue date right-aligned, followed by a hairline rule.",
+      "html": "<header class=\"ds-cv-event-header\"><h3 class=\"ds-cv-event-title-line\"><strong class=\"ds-cv-event-title\">Senior Salesforce Engineer / Technical Lead</strong> <span class=\"ds-cv-event-company\">Thrivent Financial</span></h3><time class=\"ds-cv-event-date\">2025 — Present</time></header><hr class=\"ds-hairline-rule\" />",
+      "css": ".ds-cv-event-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16pt; font-family: Raleway, sans-serif; font-size: 10pt; line-height: 1.2; } .ds-cv-event-title-line { font-size: 10pt; font-weight: 400; margin: 0; } .ds-cv-event-title { font-weight: 700; color: #000; } .ds-cv-event-company { color: #6E6E6E; } .ds-cv-event-date { color: #0096FF; font-size: 10pt; white-space: nowrap; } .ds-hairline-rule { border: 0; height: 0.4pt; background: #E1E1E1; margin: 6pt 0; }"
+    },
+    {
+      "name": "CV Event Bullet",
+      "kind": "custom",
+      "refersTo": "event-bullet",
+      "description": "Single bullet line inside an experience entry. Math-cdot prefix, body-style text, 3pt vertical step.",
+      "html": "<ul class=\"ds-cv-event-bullets\"><li>Built and scaled 2GP package pipelines across 33+ repositories.</li><li>Developed Lightning Web Components with GraphQL and built Java-based connected apps.</li></ul>",
+      "css": ".ds-cv-event-bullets { list-style: none; padding: 0; margin: 0; font-family: Raleway, sans-serif; font-size: 10pt; line-height: 1.35; color: #000; } .ds-cv-event-bullets li { padding: 0 0 3pt 1em; text-indent: -1em; } .ds-cv-event-bullets li::before { content: \"·\"; padding-right: 0.6em; }"
+    },
+    {
+      "name": "Hairline Rule",
+      "kind": "custom",
+      "refersTo": "hairline-rule",
+      "description": "The only divider primitive in the system. 0.4pt, whisper-hairline grey.",
+      "html": "<hr class=\"ds-hairline-rule-standalone\" />",
+      "css": ".ds-hairline-rule-standalone { border: 0; height: 0.4pt; background: #E1E1E1; margin: 0; width: 100%; }"
+    },
+    {
+      "name": "Meta Row",
+      "kind": "custom",
+      "refersTo": "meta-row",
+      "description": "Single meta-section line (Location / Portfolio / Email). Bold label right, value left.",
+      "html": "<div class=\"ds-meta-row\"><span class=\"ds-meta-value\">Atlanta, Georgia</span><span class=\"ds-meta-label\">Location</span></div>",
+      "css": ".ds-meta-row { display: flex; justify-content: space-between; font-family: Raleway, sans-serif; font-size: 8pt; line-height: 1.2; padding: 1pt 0; } .ds-meta-label { font-weight: 700; } .ds-meta-value { font-weight: 400; }"
+    },
+    {
+      "name": "Footer",
+      "kind": "custom",
+      "refersTo": "footer",
+      "description": "Pinned to page bottom. Centered linkedin · github links in accent blue. Deliberately exceeds the text frame in print.",
+      "html": "<footer class=\"ds-footer\"><a href=\"#\" class=\"ds-footer-link\">linkedin.com/in/andysolomon</a><span class=\"ds-footer-sep\">·</span><a href=\"#\" class=\"ds-footer-link\">github.com/andysolomon</a></footer>",
+      "css": ".ds-footer { text-align: center; font-family: Raleway, sans-serif; font-size: 10pt; padding: 8pt 0; } .ds-footer-link { color: #0096FF; text-decoration: none; } .ds-footer-link:hover { text-decoration: underline; } .ds-footer-sep { color: #0096FF; padding: 0 0.4em; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineering Letter",
+    "overview": "This is a formal single-sheet letter-form artifact — engineered, not decorated. The system reads like a spec written by someone who cares about typography: tight hierarchy, deliberate whitespace, hairline rules in place of heavier ornament, every glyph paying its own way. Confidence is signaled by restraint rather than volume. The voice is the voice of a well-engineered Stripe or Vercel document, ported into LaTeX.\n\nThe system explicitly rejects four adjacent gravity wells named in PRODUCT.md: generic Word/LinkedIn templates, Salesforce-corporate aesthetics, designer-portfolio cosplay, and AI-slop SaaS landing pages. The visual system is the proof that the engineer is also the craftsman; bridge identity is delivered through evidence, not announcement.\n\nThe current main.tex carries one legacy artifact — the bright #0096FF Salesforce-blue accent — that is itself an instance of the second anti-reference and is being retired on the active dark-mode branch.",
+    "keyCharacteristics": [
+      "Single A4 page; tight 1.25cm vertical / 1.5cm horizontal margins",
+      "Sans-serif typographic system anchored on Raleway, weights 400 and 700 only",
+      "Hairline rules (0.4pt) carry every horizontal division — no thicker borders, no boxes",
+      "Color is restrained and used as accent on ≤8% of the surface",
+      "Zero shadows, zero rounded corners, zero ornament that does not earn its place",
+      "Layout rhythm via negative \\vspace adjustments rather than uniform padding"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "A single accent color carries every emphasis on the page. The accent appears on ≤8% of the surface: section headers, the vertical title bar, dates, footer URLs. Never two accents. Never a gradient.", "section": "colors" },
+      { "name": "The Hairline-Only Rule", "body": "Horizontal divisions are 0.4pt whisper-hairline rules. No thicker borders. No filled separator bars. No boxes.", "section": "colors" },
+      { "name": "The No-Decoration Rule", "body": "Color is always semantic — it marks section, date, or active link. It never appears as decoration.", "section": "colors" },
+      { "name": "The Single-Family Rule", "body": "Raleway and only Raleway. Hierarchy is delivered by weight (400 / 700) and scale, never by family contrast.", "section": "typography" },
+      { "name": "The Two-Weight Rule", "body": "400 and 700, nothing in between. No light, no semibold, no extrabold. The contrast ratio is binary by design.", "section": "typography" },
+      { "name": "The Small-Caps Title Rule", "body": "The title block uses LaTeX \\textsc{} small-caps with letter-spacing approximating 0.08em. This treatment is reserved for the title block alone.", "section": "typography" },
+      { "name": "The No-Shadow Rule", "body": "Shadows are forbidden in this system. Depth is hairline-and-whitespace, not light-and-dark.", "section": "elevation" },
+      { "name": "The Hairline-Is-The-Layer Rule", "body": "When a division is needed, the answer is a 0.4pt whisper-hairline rule. When that feels insufficient, the answer is more vertical space, never a thicker line.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use Raleway and only Raleway. Two weights: 400 and 700.",
+      "Do carry every horizontal division as a 0.4pt whisper-hairline rule.",
+      "Do keep accent color usage to ≤8% of any visual region.",
+      "Do use \\textsc{} small-caps only for the title block.",
+      "Do respect the single-page constraint as a hard design force — it disciplines hierarchy.",
+      "Do treat any decision that could be lifted from a Word resume template, a Trailhead page, a Behance portfolio, or a v0 landing page as automatically wrong.",
+      "Do prefer \\vspace adjustments to thicker rules when the layout needs more breathing room."
+    ],
+    "donts": [
+      "Don't introduce any color outside the five tokens declared in the frontmatter without a Named-Rule-level justification.",
+      "Don't keep legacy-process-blue (#0096FF) past the dark-mode branch landing — it is the Salesforce-corporate anti-reference from PRODUCT.md.",
+      "Don't use #000 or #FFF in future iterations — tint every neutral toward the accent hue.",
+      "Don't use a second font family. No serif 'for variety'. No mono 'for technical accents'.",
+      "Don't introduce shadows. PDF shadows render as smudges.",
+      "Don't introduce rounded corners. The system is rectilinear by commitment.",
+      "Don't add icons, emoji, or pictograms. The hierarchy carries every signal that an icon would.",
+      "Don't use border-left greater than 1px (or any colored side-stripe) anywhere on the page.",
+      "Don't introduce gradient text, glassmorphism, hero-metric templates, or any of the AI-slop SaaS-landing patterns.",
+      "Don't add a second accent. The system runs on one accent or zero.",
+      "Don't use horizontal rules thicker than 0.4pt. If the rule needs to be louder, the answer is more whitespace.",
+      "Don't use icons-per-skill in Technical Skills. The bullet list is the right answer; an icon grid is the Trailhead anti-reference."
+    ]
+  }
+}

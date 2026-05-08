@@ -1,0 +1,53 @@
+/*
+ * Global resets and base styles.
+ * The component CSS lives inside each LWC's shadow DOM; this layer handles
+ * page-level concerns only (background, body type defaults, theme transition).
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--color-surface);
+  color: var(--color-type);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Surface and ink transition together when theme flips */
+  transition:
+    background-color var(--duration-base) var(--ease-out-expo),
+    color var(--duration-base) var(--ease-out-expo);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-surface);
+  color: var(--color-type);
+  line-height: 1.4;
+  font-size: var(--type-body-size);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    transition: none;
+  }
+}
+
+/* Selection picks up the accent (subtle) */
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-type);
+}
