@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sync": "node ../scripts/parse-resume.mjs",
+    "sync": "node scripts/sync.mjs",
     "predev": "npm run sync",
     "dev": "lwr dev",
     "prebuild": "npm run sync",
