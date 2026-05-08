@@ -134,19 +134,45 @@
 
 
 %----------------------------------------------------------------------------------------
-%	Color DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%	Color DEFINITIONS  (theme-switched: see \thememode below)
+%----------------------------------------------------------------------------------------
 
-\usepackage{color}
+\usepackage{xcolor}
 
-%accent color
-\definecolor{sectcol}{RGB}{0,150,255}
+% Theme switch. Set to {dark} or {light}. Dark is canon; light is preserved for parity.
+\newcommand{\thememode}{dark}
 
-%dark background color
-\definecolor{bgcol}{RGB}{110,110,110}
+% --- Light theme palette (legacy; legacy-process-blue retired) -------------------
+\definecolor{light-surface}{RGB}{255,255,255}   % page-white
+\definecolor{light-type}{RGB}{0,0,0}            % type-black (LaTeX default)
+\definecolor{light-midtype}{RGB}{110,110,110}   % mid-type-grey  (oklch ~50% 0 0)
+\definecolor{light-hairline}{RGB}{225,225,225}  % whisper-hairline
+\definecolor{light-accent}{RGB}{179,106,46}     % burnt amber  oklch(50% 0.16 55)
 
-%light background / accent color
-\definecolor{softcol}{RGB}{225,225,225}
+% --- Dark theme palette (canonical) -----------------------------------------------
+\definecolor{dark-surface}{RGB}{32,28,22}       % editorial-warm dark   oklch(16% 0.008 80)
+\definecolor{dark-type}{RGB}{239,234,226}       % warm off-white type    oklch(94% 0.005 80)
+\definecolor{dark-midtype}{RGB}{173,167,158}    % lifted mid-type grey   oklch(70% 0.008 80)
+\definecolor{dark-hairline}{RGB}{61,55,47}      % warm dim hairline      oklch(28% 0.008 80)
+\definecolor{dark-accent}{RGB}{219,168,94}      % amber / honey accent   oklch(72% 0.13 75)
+
+% Resolve the active theme into the semantic tokens used by every macro below.
+% Keeping legacy names (sectcol / bgcol / softcol) so cv macros need no changes.
+\ifthenelse{\equal{\thememode}{dark}}{%
+    \colorlet{pagecol}{dark-surface}%
+    \colorlet{textcol}{dark-type}%
+    \colorlet{sectcol}{dark-accent}%
+    \colorlet{bgcol}{dark-midtype}%
+    \colorlet{softcol}{dark-hairline}%
+}{%
+    \colorlet{pagecol}{light-surface}%
+    \colorlet{textcol}{light-type}%
+    \colorlet{sectcol}{light-accent}%
+    \colorlet{bgcol}{light-midtype}%
+    \colorlet{softcol}{light-hairline}%
+}
+
+\pagecolor{pagecol}
 
 
 %============================================================================%
@@ -289,7 +315,10 @@
 
 
 %use our custom fancy header definitions
-\pagestyle{fancy}	
+\pagestyle{fancy}
+
+%apply theme-resolved default text color
+\color{textcol}
 
 
 
@@ -428,7 +457,7 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{linkedin.com/in/andysolomon} $\cdot$ \textcolor{sectcol}{github.com/andysolomon}}}}
+\hspace{-0.25\linewidth}\colorbox{pagecol}{\makebox[1.5\linewidth][c]{\mystrut  \textnormal{\textcolor{sectcol}{linkedin.com/in/andysolomon} $\cdot$ \textcolor{sectcol}{github.com/andysolomon}}}}
 \medskip 
 
 

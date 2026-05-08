@@ -1,0 +1,10 @@
+node_modules
+dist
+site
+.lwr
+__lwr_cache__
+*.log
+.DS_Store
+.env
+.env.local
+.vercel

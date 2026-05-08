@@ -1,0 +1,26 @@
+{
+  "name": "andrewsolomon-resume-web",
+  "version": "1.0.0",
+  "description": "Andrew Solomon — Resume, as a single-page LWR + TypeScript app. Mirrors the LaTeX source and the design system in DESIGN.md.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "lwr dev",
+    "build": "lwr build && rm -rf site/portfolio && cp -r static/portfolio site/portfolio",
+    "serve": "lwr serve",
+    "start": "lwr start",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lwr": "^0.23.4",
+    "@lwc/engine-dom": "^9.2.2",
+    "lwc": "^9.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.11.30"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

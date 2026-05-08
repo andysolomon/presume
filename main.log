@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  8 MAY 2026 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  8 MAY 2026 14:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -808,27 +808,27 @@ LaTeX Warning: Unused global option(s):
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 288.
-LaTeX Font Info:    ... okay on input line 288.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 288.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 2
-88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 314.
+LaTeX Font Info:    ... okay on input line 314.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 314.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 3
+14.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 288.
+LaTeX Font Info:    ... okay on input line 314.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -889,96 +889,96 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/n' aliased to
-(Font)              `T1/Raleway-OsF/m/n' on input line 314.
+(Font)              `T1/Raleway-OsF/m/n' on input line 343.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/n' will be
-(Font)              scaled to size 29.86pt on input line 314.
+(Font)              scaled to size 29.86pt on input line 343.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/sc' aliased to
-(Font)              `T1/Raleway-OsF/m/sc' on input line 314.
+(Font)              `T1/Raleway-OsF/m/sc' on input line 343.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/sc' will be
-(Font)              scaled to size 29.86pt on input line 314.
+(Font)              scaled to size 29.86pt on input line 343.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/n' aliased to
-(Font)              `T1/Raleway-OsF/m/n' on input line 315.
+(Font)              `T1/Raleway-OsF/m/n' on input line 344.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 315.
+(Font)              scaled to size 9.0pt on input line 344.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/n' aliased to
-(Font)              `T1/Raleway-OsF/m/n' on input line 326.
+(Font)              `T1/Raleway-OsF/m/n' on input line 355.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 326.
+(Font)              scaled to size 8.0pt on input line 355.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/bold/n' aliased to
-(Font)              `T1/Raleway-OsF/b/n' on input line 326.
+(Font)              `T1/Raleway-OsF/b/n' on input line 355.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 326.
+(Font)              scaled to size 8.0pt on input line 355.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/n' aliased to
-(Font)              `T1/Raleway-OsF/m/n' on input line 335.
+(Font)              `T1/Raleway-OsF/m/n' on input line 364.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 335.
+(Font)              scaled to size 12.0pt on input line 364.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/bold/n' aliased to
-(Font)              `T1/Raleway-OsF/b/n' on input line 335.
+(Font)              `T1/Raleway-OsF/b/n' on input line 364.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 335.
+(Font)              scaled to size 12.0pt on input line 364.
 LaTeX Font Info:    Trying to load font information for TS1+Raleway-OsF on inpu
-t line 341.
+t line 370.
  (/usr/local/texlive/2026basic/texmf-dist/tex/latex/raleway/TS1Raleway-OsF.fd
 File: TS1Raleway-OsF.fd 2025/04/09 (autoinst) Font definitions for TS1/Raleway-
 OsF.
 )
 LaTeX Font Info:    Font shape `TS1/Raleway-OsF/regular/n' aliased to
-(Font)              `TS1/Raleway-OsF/m/n' on input line 341.
+(Font)              `TS1/Raleway-OsF/m/n' on input line 370.
 LaTeX Font Info:    Font shape `TS1/Raleway-OsF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 341.
+(Font)              scaled to size 10.0pt on input line 370.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/bold/n' aliased to
-(Font)              `T1/Raleway-OsF/b/n' on input line 341.
+(Font)              `T1/Raleway-OsF/b/n' on input line 370.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 341.
+(Font)              scaled to size 10.0pt on input line 370.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 360.
+(Font)              <7> on input line 389.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 360.
+(Font)              <5> on input line 389.
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 360--360
+Overfull \hbox (9.77357pt too wide) in alignment at lines 389--389
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--360
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 369--369
+Overfull \hbox (9.77357pt too wide) in alignment at lines 398--398
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 377--377
+Overfull \hbox (9.77357pt too wide) in alignment at lines 406--406
 [][] 
  []
 
 
-Overfull \hbox (1.98744pt too wide) in paragraph at lines 377--377
+Overfull \hbox (1.98744pt too wide) in paragraph at lines 406--406
 []$\OMS/cmsy/m/n/10 ^^A$ \T1/Raleway-OsF/m/n/10 De-liv-ered en-ter-prise Sales-
 force so-lu-tions for For-tune 500 clients in-clud-ing Ring Cen-tral and Ford, 
 serv-ing 50,000+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--377
+Underfull \hbox (badness 10000) in paragraph at lines 406--406
 
  []
 
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/sl' in size <10> not ava
 ilable
 (Font)              Font shape `T1/Raleway-OsF/regular/it' tried instead on inp
-ut line 377.
+ut line 406.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/regular/it' aliased to
-(Font)              `T1/Raleway-OsF/m/it' on input line 377.
+(Font)              `T1/Raleway-OsF/m/it' on input line 406.
 LaTeX Font Info:    Font shape `T1/Raleway-OsF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 377.
+(Font)              scaled to size 10.0pt on input line 406.
 
 Package fancyhdr Warning: \headheight is too small (-5.0pt): 
 (fancyhdr)                Make it at least 12.0pt, for example:
@@ -995,57 +995,57 @@ Overfull \vbox (5.0pt too high) has occurred while \output is active []
 r/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_3r74if.enc}{/usr
 /local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_itoun2.enc}{/usr/
 local/texlive/2026basic/texmf-dist/fonts/enc/dvips/raleway/a_2drkug.enc}]
-Overfull \hbox (9.77357pt too wide) in alignment at lines 384--384
+Overfull \hbox (9.77357pt too wide) in alignment at lines 413--413
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--384
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 391--391
+Overfull \hbox (9.77357pt too wide) in alignment at lines 420--420
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
+Underfull \hbox (badness 10000) in paragraph at lines 420--420
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 399--399
+Overfull \hbox (9.77357pt too wide) in alignment at lines 428--428
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--399
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 406--406
+Overfull \hbox (9.77357pt too wide) in alignment at lines 435--435
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--406
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 
  []
 
 
-Overfull \hbox (9.77357pt too wide) in alignment at lines 415--415
+Overfull \hbox (9.77357pt too wide) in alignment at lines 444--444
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 415--415
+Underfull \hbox (badness 10000) in paragraph at lines 444--444
 
  []
 
 
-Overfull \hbox (134.03741pt too wide) in paragraph at lines 431--433
+Overfull \hbox (134.03741pt too wide) in paragraph at lines 460--462
 [] [][][][][][]
  []
 
@@ -1067,18 +1067,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16925 strings out of 469006
- 369457 string characters out of 5454814
- 781177 words of memory out of 5000000
- 45293 multiletter control sequences out of 15000+600000
+ 16935 strings out of 469006
+ 369628 string characters out of 5454814
+ 781752 words of memory out of 5000000
+ 45303 multiletter control sequences out of 15000+600000
  792271 words of font info for 60 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 84i,11n,104p,548b,325s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,104p,548b,331s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/impallari/raleway/Ralewa
 y-Bold.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/impallari/ralew
 ay/Raleway-Regular.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (2 pages, 43377 bytes).
+Output written on main.pdf (2 pages, 43587 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
