@@ -2,7 +2,7 @@
 // Parse main.tex into a typed TS module the LWR app imports.
 // Single source of truth for resume content lives in main.tex.
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -290,6 +290,12 @@ export type Resume = {
 }
 
 function main() {
+  if (!existsSync(texPath)) {
+    console.warn(
+      `parse-resume: main.tex not found at ${texPath}; using committed resumeData.ts as-is.`,
+    );
+    return;
+  }
   const tex = readFileSync(texPath, 'utf8');
   const resume = buildResume(tex);
   mkdirSync(dirname(outPath), { recursive: true });
