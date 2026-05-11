@@ -55,7 +55,6 @@ export default class GovernmentResume extends LightningElement {
   get header() {
     return {
       ...resume.header,
-      title: 'Government Experience',
       subtitle: 'Federal delivery, secure Salesforce architecture, Experience Cloud, and compliance-focused engineering',
     };
   }
