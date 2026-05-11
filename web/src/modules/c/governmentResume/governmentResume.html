@@ -67,7 +67,35 @@
 
     <section class="block">
       <h2 class="section-header">Government Experience</h2>
-      <template for:each={experience} for:item="e">
+      <template for:each={governmentExperience} for:item="e">
+        <article key={e.key} class="event">
+          <header class="event-header">
+            <h3 class="event-title-line">
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
+            </h3>
+            <time class="event-date">{e.date}</time>
+          </header>
+          <hr class="hairline" />
+          <ul class="bullets">
+            <template for:each={e.bullets} for:item="b">
+              <li key={b.key}>{b.text}</li>
+            </template>
+          </ul>
+        </article>
+      </template>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Recent Salesforce Experience</h2>
+      <p class="prose section-intro">
+        Recent commercial Salesforce delivery that complements the VA work with platform leadership, package engineering, LWC architecture, testing, and enterprise-scale implementation experience.
+      </p>
+      <template for:each={additionalExperience} for:item="e">
         <article key={e.key} class="event">
           <header class="event-header">
             <h3 class="event-title-line">

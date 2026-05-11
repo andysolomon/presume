@@ -8,7 +8,7 @@ const MAIN_RESUME_HREF = '/';
 const GOVERNMENT_COMPANY_MARKER = 'Department of Veterans Affairs';
 
 const GOVERNMENT_SUMMARY =
-  'Federal delivery experience across VA security and benefits programs, with hands-on Salesforce architecture, Experience Cloud delivery, and security-first engineering. Strong depth in persona-based testing, CRUD and FLS enforcement, queue-driven case operations, and secure content access patterns for regulated environments.';
+  'Federal delivery experience across VA security and benefits programs, paired with broader enterprise leadership across Salesforce, platform engineering, frontend architecture, and secure delivery. This version foregrounds government work while preserving the adjacent experience that supports execution in regulated, large-scale environments.';
 
 const GOVERNMENT_HIGHLIGHTS = [
   'Delivered Salesforce solutions for Veterans Affairs programs covering personnel security investigations and benefits quality management.',
@@ -102,10 +102,20 @@ export default class GovernmentResume extends LightningElement {
     }));
   }
 
-  get experience(): RenderedEvent[] {
+  get governmentExperience(): RenderedEvent[] {
     return resume.experience
       .filter((e) => e.company.includes(GOVERNMENT_COMPANY_MARKER))
       .map((e, i) => this.toRenderedEvent(e, `gov-exp-${i}`));
+  }
+
+  get additionalExperience(): RenderedEvent[] {
+    return resume.experience
+      .filter(
+        (e) =>
+          !e.company.includes(GOVERNMENT_COMPANY_MARKER) &&
+          (e.title.includes('Salesforce') || e.company === 'CodeScience'),
+      )
+      .map((e, i) => this.toRenderedEvent(e, `add-exp-${i}`));
   }
 
   get education(): RenderedEvent[] {
