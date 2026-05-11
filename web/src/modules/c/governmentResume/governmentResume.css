@@ -1,19 +1,11 @@
-/*
- * App component styles.
- * Mirrors the LaTeX source's structure: title block, meta, sections, cv events, bullets, footer.
- * Every value descends from DESIGN.md tokens — no hardcoded colors, no second font family.
- */
+/* Mirrors the primary resume shell while tailoring a few sections for the
+   government-focused subpage. */
 
 :host {
   display: block;
   background: var(--color-surface);
   color: var(--color-type);
 }
-
-/* --- Export PDF affordance ----------------------------------------------
-   Top-left fixed control. Mirrors the theme-toggle's restraint at the right:
-   transparent surface, hairline border, accent on hover/focus. The label is
-   visible by default — this is an action, not a brand mark. */
 
 .pdf-export {
   position: fixed;
@@ -68,8 +60,6 @@
     gap: var(--space-sm);
   }
 
-  /* Hide the verbal label on the smallest screens to leave room for content;
-     the icon plus aria-label keeps the affordance fully discoverable. */
   .pdf-export-label {
     display: none;
   }
@@ -81,8 +71,6 @@
   padding: var(--page-margin-y) var(--page-margin-x);
   font-family: var(--font-sans);
 }
-
-/* --- Title block ---------------------------------------------------- */
 
 .title-block {
   text-align: center;
@@ -99,11 +87,10 @@
   letter-spacing: var(--type-display-tracking);
   margin: 0;
   font-variant: small-caps;
-  text-transform: lowercase; /* lowercase + small-caps yields true SMALL-CAPS */
+  text-transform: lowercase;
   color: var(--color-type);
 }
 
-/* The vertical accent bar between "Andrew Solomon" and "Resume" */
 .bar {
   display: inline-block;
   width: 3px;
@@ -113,8 +100,6 @@
   transition: background-color var(--duration-base) var(--ease-out-expo);
 }
 
-/* The "Andrew Solomon" wordmark, when wired as a LinkedIn link, inherits the
-   display typography; only the color shifts on hover/focus to signal interactivity. */
 .name-link {
   color: inherit;
   text-decoration: none;
@@ -161,8 +146,6 @@
   outline: none;
 }
 
-/* --- Meta section --------------------------------------------------- */
-
 .meta {
   margin-bottom: var(--space-2xl);
 }
@@ -198,8 +181,6 @@
   outline: none;
 }
 
-/* --- The single divider primitive ----------------------------------- */
-
 .hairline {
   border: 0;
   height: var(--hairline-weight);
@@ -208,8 +189,6 @@
   width: 100%;
   transition: background-color var(--duration-base) var(--ease-out-expo);
 }
-
-/* --- Section blocks ------------------------------------------------- */
 
 .block {
   margin: var(--space-2xl) 0;
@@ -225,46 +204,53 @@
   transition: color var(--duration-base) var(--ease-out-expo);
 }
 
-/* --- Body prose ----------------------------------------------------- */
-
 .prose {
   font-size: var(--type-body-size);
   line-height: 1.55;
-  margin: 0;
+  margin: 0 auto;
   max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* --- Skills / cert lists -------------------------------------------- */
-
-.skills {
+.skills,
+.bullets {
   list-style: none;
   padding: 0;
   margin: 0;
   font-size: var(--type-body-size);
-  line-height: 1.6;
+  line-height: 1.55;
   display: flex;
   flex-direction: column;
+}
+
+.skills {
   gap: var(--space-md);
 }
 
-.skills li {
+.skills li,
+.bullets li {
   padding-left: 1.1em;
   text-indent: -1.1em;
 }
 
-.skills li::before {
+.skills li::before,
+.bullets li::before {
   content: '\00b7';
   padding-right: 0.7em;
   color: var(--color-type);
 }
 
+.bullets {
+  gap: var(--space-sm);
+}
+
+.bullets-compact {
+  max-width: 72ch;
+  margin: 0 auto;
+}
+
 .skill-label {
   font-weight: var(--weight-bold);
 }
-
-/* --- CV event ------------------------------------------------------- */
 
 .event {
   margin: var(--space-xl) 0 var(--space-2xl);
@@ -290,21 +276,16 @@
   color: var(--color-type);
 }
 
-.event-company {
-  color: var(--color-mid-type);
-  font-weight: var(--weight-regular);
-}
-
-/* The em-dash separator before the company name. Lives outside the link target
-   so the clickable area is exactly the company text, not the leading punctuation. */
+.event-company,
 .event-company-sep {
   color: var(--color-mid-type);
   font-weight: var(--weight-regular);
+}
+
+.event-company-sep {
   white-space: pre;
 }
 
-/* When wired as an outbound link, the company name keeps its mid-type-grey at rest
-   and lifts to the accent on hover/focus — same idiom as .meta-link and .footer-link. */
 .event-company-link {
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out-expo);
@@ -332,30 +313,6 @@
   margin: var(--space-md) 0 var(--space-lg);
 }
 
-.bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: var(--type-body-size);
-  line-height: 1.55;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.bullets li {
-  padding-left: 1.1em;
-  text-indent: -1.1em;
-}
-
-.bullets li::before {
-  content: '\00b7';
-  padding-right: 0.7em;
-  color: var(--color-type);
-}
-
-/* --- Footer --------------------------------------------------------- */
-
 .footer {
   text-align: center;
   font-size: var(--type-body-size);
@@ -380,8 +337,6 @@
   color: var(--color-accent);
   padding: 0 0.5em;
 }
-
-/* --- Responsive ----------------------------------------------------- */
 
 @media (max-width: 640px) {
   .resume {

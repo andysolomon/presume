@@ -21,6 +21,16 @@
         "title": "Andrew Solomon — Resume",
         "description": "Senior Salesforce Engineer & Technical Lead. Bridge identity: deep platform credibility plus modern web/AI craftsmanship."
       }
+    },
+    {
+      "id": "government-experience",
+      "path": "/government-experience",
+      "rootComponent": "c/governmentResume",
+      "layoutTemplate": "$rootDir/src/layouts/main.html",
+      "properties": {
+        "title": "Andrew Solomon — Government Experience",
+        "description": "Government-focused resume view highlighting VA delivery, secure Salesforce architecture, Experience Cloud, and compliance-first engineering."
+      }
     }
   ]
 }
