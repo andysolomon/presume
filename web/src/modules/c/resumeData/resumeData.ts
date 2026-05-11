@@ -41,7 +41,7 @@ export const resume: Resume = {
       "value": "andrewsolomon.edu@gmail.com"
     }
   ],
-  "summary": "Senior Salesforce Engineer & Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies. Security-first approach with deep expertise in sharing models, persona-based testing, and CRUD/FLS enforcement.",
+  "summary": "Senior Salesforce Engineer & Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, and CRUD/FLS enforcement. Holds an active national security clearance.",
   "skills": [
     {
       "label": "Salesforce",
@@ -70,7 +70,7 @@ export const resume: Resume = {
   ],
   "experience": [
     {
-      "date": "2025 — Present",
+      "date": "2024 — Present",
       "title": "Senior Salesforce Engineer / Technical Lead",
       "company": "Thrivent Financial",
       "companyHref": "https://www.thrivent.com",
@@ -100,12 +100,37 @@ export const resume: Resume = {
       ]
     },
     {
+      "date": "2022 — 2023",
+      "title": "Senior Salesforce Developer",
+      "company": "Department of Veterans Affairs — PSIP",
+      "companyHref": "",
+      "bullets": [
+        "Designed and delivered a Salesforce case management system for VA Personnel Security & Investigations Program (PSIP)",
+        "Built an Experience Cloud portal for 10,000+ applicants to submit forms and track case status",
+        "Architected queue-based sharing and case assignment for 500+ investigators",
+        "Implemented SSO/JIT provisioning and Queueable-based permission set orchestration",
+        "Hardened document access and test coverage with Security.stripInaccessible() and persona-based testing patterns"
+      ]
+    },
+    {
+      "date": "2021 — 2022",
+      "title": "Salesforce Developer",
+      "company": "Department of Veterans Affairs — VBA QMS",
+      "companyHref": "",
+      "bullets": [
+        "Refactored 15+ test classes to least-privilege, persona-based security testing",
+        "Implemented fflib Selector patterns with CRUD/FLS enforcement across query paths",
+        "Replaced custom permission checks with FeatureManagement.checkPermission() and modernized Workflow Rules to before-save Flows",
+        "Improved Apex test scores by 25-40 points and eliminated MIXED_DML_OPERATION failures via @testSetup"
+      ]
+    },
+    {
       "date": "2018 — 2022",
       "title": "Lead Frontend Engineer",
       "company": "CodeScience",
       "companyHref": "https://www.codescience.com",
       "bullets": [
-        "Delivered enterprise Salesforce solutions for Fortune 500 clients including Ring Central and Ford, serving 50,000+ daily users",
+        "Delivered enterprise Salesforce solutions for Fortune 500 clients including RingCentral and Ford, serving 50,000+ daily users",
         "Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems",
         "Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations",
         "Implemented Redux state management pattern, reducing component complexity by 40%",
@@ -176,16 +201,7 @@ export const resume: Resume = {
       ]
     }
   ],
-  "footer": [
-    {
-      "label": "linkedin.com/in/andysolomon",
-      "href": "https://linkedin.com/in/andysolomon"
-    },
-    {
-      "label": "github.com/andysolomon",
-      "href": "https://github.com/andysolomon"
-    }
-  ]
+  "footer": []
 };
 
 export default resume;

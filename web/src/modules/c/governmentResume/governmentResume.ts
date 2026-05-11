@@ -4,6 +4,18 @@ import resume from 'c/resumeData';
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'resume-theme';
 const GOVERNMENT_PAGE_HREF = '/government-experience';
+const MAIN_RESUME_HREF = '/';
+const GOVERNMENT_COMPANY_MARKER = 'Department of Veterans Affairs';
+
+const GOVERNMENT_SUMMARY =
+  'Federal delivery experience across VA security and benefits programs, with hands-on Salesforce architecture, Experience Cloud delivery, and security-first engineering. Strong depth in persona-based testing, CRUD and FLS enforcement, queue-driven case operations, and secure content access patterns for regulated environments.';
+
+const GOVERNMENT_HIGHLIGHTS = [
+  'Delivered Salesforce solutions for Veterans Affairs programs covering personnel security investigations and benefits quality management.',
+  'Built secure Experience Cloud and SSO flows for high-volume applicant and investigator workflows.',
+  'Implemented least-privilege testing, CRUD and FLS enforcement, and Security.stripInaccessible() patterns for compliance-sensitive delivery.',
+  'Automated case distribution, queue-based assignment, and Flow modernization to improve operational throughput.',
+];
 
 type RenderedMeta = {
   key: string;
@@ -27,11 +39,10 @@ type RenderedEvent = {
 };
 
 type RenderedFooter = { key: string; label: string; href: string };
+type RenderedHighlight = { key: string; text: string };
 
-export default class App extends LightningElement {
+export default class GovernmentResume extends LightningElement {
   @track theme: Theme = 'dark';
-
-  resume = resume;
 
   override connectedCallback(): void {
     const saved = this.readSavedTheme();
@@ -42,7 +53,11 @@ export default class App extends LightningElement {
   }
 
   get header() {
-    return resume.header;
+    return {
+      ...resume.header,
+      title: 'Government Experience',
+      subtitle: 'Federal delivery, secure Salesforce architecture, Experience Cloud, and compliance-focused engineering',
+    };
   }
 
   get hasNameLink(): boolean {
@@ -54,7 +69,14 @@ export default class App extends LightningElement {
   }
 
   get summary(): string {
-    return resume.summary;
+    return GOVERNMENT_SUMMARY;
+  }
+
+  get highlights(): RenderedHighlight[] {
+    return GOVERNMENT_HIGHLIGHTS.map((text, index) => ({
+      key: `highlight-${index}`,
+      text,
+    }));
   }
 
   get metaItems(): RenderedMeta[] {
@@ -81,7 +103,9 @@ export default class App extends LightningElement {
   }
 
   get experience(): RenderedEvent[] {
-    return resume.experience.map((e, i) => this.toRenderedEvent(e, `exp-${i}`));
+    return resume.experience
+      .filter((e) => e.company.includes(GOVERNMENT_COMPANY_MARKER))
+      .map((e, i) => this.toRenderedEvent(e, `gov-exp-${i}`));
   }
 
   get education(): RenderedEvent[] {
@@ -94,6 +118,10 @@ export default class App extends LightningElement {
       label: f.label,
       href: f.href,
     }));
+  }
+
+  get mainResumeHref(): string {
+    return MAIN_RESUME_HREF;
   }
 
   get governmentPageHref(): string {
