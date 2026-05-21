@@ -4,6 +4,7 @@ import resume from 'c/resumeData';
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'resume-theme';
 const GOVERNMENT_PAGE_HREF = '/government-experience';
+const KAPITUS_PAGE_HREF = '/kapitus';
 
 type RenderedMeta = {
   key: string;
@@ -98,6 +99,10 @@ export default class App extends LightningElement {
 
   get governmentPageHref(): string {
     return GOVERNMENT_PAGE_HREF;
+  }
+
+  get kapitusPageHref(): string {
+    return KAPITUS_PAGE_HREF;
   }
 
   handleThemeToggle(): void {

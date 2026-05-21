@@ -2,8 +2,8 @@
   <a
     class="pdf-export"
     href="/assets/andrewsolomon.pdf"
-    download="andrewsolomon-resume.pdf"
-    aria-label="Download Andrew Solomon's resume as a PDF"
+    download="andrewsolomon-kapitus-resume.pdf"
+    aria-label="Download Andrew Solomon's Kapitus-tailored resume as a PDF"
   >
     <svg class="pdf-export-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
       <path d="M7 1.5v7.4M3.6 5.5 7 8.9l3.4-3.4M2.5 11.5h9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"/>
@@ -12,7 +12,7 @@
   </a>
   <c-theme-toggle theme={theme} ontoggle={handleThemeToggle}></c-theme-toggle>
 
-  <main class="resume" aria-label="Andrew Solomon — Resume">
+  <main class="resume" aria-label="Andrew Solomon — Salesforce Tech Lead Resume">
     <header class="title-block">
       <h1 class="title-line">
         <template lwc:if={hasNameLink}>
@@ -27,13 +27,10 @@
         <template lwc:else>
           <span class="name">{header.name}</span>
         </template>
-        <span class="bar" aria-hidden="true"></span>
-        <span class="name">{header.title}</span>
       </h1>
       <p class="subtitle">{header.subtitle}</p>
       <p class="alternate-link-row">
-        <a class="alternate-link" href={governmentPageHref}>View government experience</a>
-        <a class="alternate-link" href={kapitusPageHref}>View Salesforce Tech Lead resume</a>
+        <a class="alternate-link" href={mainResumeHref}>Back to main resume</a>
       </p>
     </header>
 
@@ -53,8 +50,17 @@
     </section>
 
     <section class="block">
-      <h2 class="section-header">Summary</h2>
+      <h2 class="section-header">Profile</h2>
       <p class="prose">{summary}</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Highlights</h2>
+      <ul class="bullets bullets-compact">
+        <template for:each={highlights} for:item="item">
+          <li key={item.key}>{item.text}</li>
+        </template>
+      </ul>
     </section>
 
     <section class="block">
@@ -67,8 +73,36 @@
     </section>
 
     <section class="block">
-      <h2 class="section-header">Experience</h2>
-      <template for:each={experience} for:item="e">
+      <h2 class="section-header">Salesforce Experience</h2>
+      <template for:each={salesforceExperience} for:item="e">
+        <article key={e.key} class="event">
+          <header class="event-header">
+            <h3 class="event-title-line">
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
+            </h3>
+            <time class="event-date">{e.date}</time>
+          </header>
+          <hr class="hairline" />
+          <ul class="bullets">
+            <template for:each={e.bullets} for:item="b">
+              <li key={b.key}>{b.text}</li>
+            </template>
+          </ul>
+        </article>
+      </template>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Adjacent Engineering Experience</h2>
+      <p class="prose section-intro">
+        Pre-Salesforce roles that built the foundation for Tech Lead delivery — full-stack engineering, frontend architecture, AWS infrastructure, and cross-functional leadership.
+      </p>
+      <template for:each={adjacentExperience} for:item="e">
         <article key={e.key} class="event">
           <header class="event-header">
             <h3 class="event-title-line">

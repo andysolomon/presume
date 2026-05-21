@@ -31,6 +31,16 @@
         "title": "Andrew Solomon — Government Experience",
         "description": "Government-focused resume view highlighting VA delivery, secure Salesforce architecture, Experience Cloud, and compliance-first engineering."
       }
+    },
+    {
+      "id": "kapitus",
+      "path": "/kapitus",
+      "rootComponent": "c/kapitusResume",
+      "layoutTemplate": "$rootDir/src/layouts/main.html",
+      "properties": {
+        "title": "Andrew Solomon — Salesforce Tech Lead",
+        "description": "Salesforce Tech Lead resume view tailored for Kapitus — Sales Cloud, Experience Cloud, LWC, Apex, Triggers, Batch Apex, integrations (REST/SOAP/Bulk), DevOps, and agile leadership."
+      }
     }
   ]
 }
