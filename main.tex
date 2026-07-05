@@ -368,12 +368,12 @@
 \normalsize
 
 \cvsection{Summary}
-Senior Salesforce Engineer \& Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, and CRUD/FLS enforcement. Holds an active national security clearance.
+Senior Salesforce Engineer \& Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.
 
 \cvsection{Technical Skills}
 \vspace{-10pt}
 \begin{itemize}
-\item \textbf{Salesforce:} Lightning Web Components (LWC), Apex, Experience Cloud, OmniStudio, 2GP Packages, Flow, SOQL
+\item \textbf{Salesforce:} Apex, LWC, SOQL, SOSL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, OmniStudio, 2GP Packages, Flow
 \item \textbf{Design:} Figma, SLDS 2, Design Tokens, IBM Carbon Design System, Sass
 \item \textbf{AI:} OpenAI, Claude API, AI Agents, Prompt Engineering, MCP
 \item \textbf{DevOps:} GitHub Actions, SonarQube, SFDX, Vercel, Jest, Playwright
@@ -385,11 +385,11 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
 
 \cvevent{2024 -- Present}{Senior Salesforce Engineer / Technical Lead}{\href{https://www.thrivent.com}{Thrivent Financial}}{
     {Built and scaled 2GP package pipelines across 33+ repositories, managing multiple SFDX projects in parallel across multi-tier environments},
-    {Developed Lightning Web Components with GraphQL and built Java-based connected apps for external clients},
+    {Developed Lightning Web Components with GraphQL and Apex service layers that integrate with Java-based connected apps for external clients},
     {Architected a Salesforce Bulk API 2.0 + Amazon S3 pipeline that streams large-scale query results to S3 and generates custom object artifacts for downstream packaging and analytics},
     {Owned GitHub Actions workflows and build maintenance; configured reports and dashboards across the platform},
     {Established design alignment mapping between Figma, SLDS 1, and SLDS 2 to standardize tokens across the design system},
-    {Established LWC testing standards with a templated Jest guide and introduced Playwright for browser automation and end-to-end coverage},
+    {Established Apex and LWC testing standards, including dependency-isolated unit tests, templated Jest guidance, and Playwright browser automation for end-to-end coverage},
     {Mentored engineers on AI engineering and modern Node/TypeScript across platform, web, and internal dev tooling},
     {Authored engineering, DevOps, and Salesforce documentation; drove cross-team feedback loops with design and customers in Agile/Kanban}
 }
@@ -397,8 +397,8 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
 \cvevent{2023 -- 2024}{Senior Salesforce Developer}{\href{https://www.magmutual.com}{MagMutual}}{
     {Led development of Lightning Web Components platform serving 10,000+ healthcare professionals, improving user engagement by 30\%},
     {Architected enterprise Git workflow system with GitHub Actions, reducing deployment time by 40\% across 5 development teams},
-    {Developed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime},
-    {Implemented Jest testing suite achieving 95\% code coverage and WCAG 2.1 compliance},
+    {Developed Apex-backed real-time analytics dashboard processing 1M+ daily transactions with 99.9\% uptime},
+    {Implemented Apex and Jest testing suites achieving 95\% code coverage and WCAG 2.1 compliance},
     {Built GraphQL-powered headless CMS integration, reducing content update time by 60\%},
     {Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications}
 }
@@ -407,22 +407,22 @@ Senior Salesforce Engineer \& Technical Lead with 15+ years of software developm
     {Designed and delivered a Salesforce case management system for VA Personnel Security \& Investigations Program (PSIP)},
     {Built an Experience Cloud portal for 10,000+ applicants to submit forms and track case status},
     {Architected queue-based sharing and case assignment for 500+ investigators},
-    {Implemented SSO/JIT provisioning and Queueable-based permission set orchestration},
-    {Hardened document access and test coverage with Security.stripInaccessible() and persona-based testing patterns}
+    {Implemented Apex-based SSO/JIT provisioning and Queueable permission set orchestration with resilient retry and error handling patterns},
+    {Hardened Apex document access and test coverage with Security.stripInaccessible(), CRUD/FLS checks, sharing enforcement, and persona-based testing patterns}
 }
 
 \cvevent{2021 -- 2022}{Salesforce Developer}{Department of Veterans Affairs -- VBA QMS}{
     {Refactored 15+ test classes to least-privilege, persona-based security testing},
-    {Implemented fflib Selector patterns with CRUD/FLS enforcement across query paths},
-    {Replaced custom permission checks with FeatureManagement.checkPermission() and modernized Workflow Rules to before-save Flows},
-    {Improved Apex test scores by 25-40 points and eliminated MIXED\_DML\_OPERATION failures via @testSetup}
+    {Implemented fflib Selector, Domain, and Service patterns with CRUD/FLS enforcement across SOQL query paths},
+    {Replaced custom Apex permission checks with FeatureManagement.checkPermission() and modernized Workflow Rules to before-save Flows},
+    {Improved Apex test scores by 25-40 points, eliminated MIXED\_DML\_OPERATION failures via @testSetup, and stabilized tests around least-privilege users}
 }
 
 \cvevent{2018 -- 2022}{Lead Frontend Engineer}{\href{https://www.codescience.com}{CodeScience}}{
     {Delivered enterprise Salesforce solutions for Fortune 500 clients including RingCentral and Ford, serving 50,000+ daily users},
-    {Led UI architecture for 15+ projects using TypeScript and LWC, establishing core design systems},
+    {Led UI and Apex architecture for 15+ projects using TypeScript, LWC, service classes, and trigger patterns, establishing core design systems},
     {Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations},
-    {Implemented Redux state management pattern, reducing component complexity by 40\%},
+    {Designed Apex integration and orchestration layers for AppExchange-grade managed package features while implementing Redux state management patterns that reduced component complexity by 40\%},
     {Mentored team of 8 developers in modern JavaScript practices and Salesforce development}
 }
 
