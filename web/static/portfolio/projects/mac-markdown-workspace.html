@@ -32,10 +32,11 @@
       <a href="/" class="back-link">&larr; Back to all projects</a>
       <header class="case-study-header">
         <span class="badge">Case Study</span>
-        <h1>Mac Markdown Workspace (Web App)</h1>
+        <h1>Mac Markdown Workspace</h1>
         <p class="lede">
           A polished Markdown workspace with source editing, split preview, WYSIWYG mode,
-          Mermaid diagrams, math rendering, themes, and export tooling.
+          Mermaid diagrams, math rendering, themes, and export tooling — one React codebase
+          shipping to macOS desktop, the browser, and iOS.
         </p>
         <div class="case-study-meta">
           <a class="meta-pill" href="https://mac-markdown-workspace.vercel.app">Live Demo</a>
@@ -45,24 +46,28 @@
         <h2>Problem</h2>
         <p>
           Build a local-first Markdown product experience that feels like a desktop workspace,
-          while also shipping a browser-deployable web version for easy demos and portfolio review.
+          while reaching the browser and mobile from the same code — so a single editor ships
+          to macOS, the web, and iOS without a rewrite per platform.
         </p>
 
         <h2>Implementation Highlights</h2>
         <ul>
-          <li>Desktop and web workspace flow with secure local-file boundaries</li>
+          <li>One platform-agnostic React app targeting Electron, web, and iOS through a single host-capability abstraction</li>
+          <li>Secure local-file boundaries: sandboxed renderer, all file access behind a typed API</li>
           <li>Source editor with counters and editing modes</li>
           <li>Rich markdown preview with Mermaid, emoji, and math support</li>
           <li>Editable preview mode for direct content updates</li>
           <li>Theme system (light/dark/system) and keyboard shortcut workflow</li>
+          <li>Mobile-responsive UI tuned for iOS (safe-area insets, no zoom-on-focus, no horizontal scroll)</li>
           <li>Export support paths for TXT, PDF, and DOCX</li>
         </ul>
 
         <h2>Current Status</h2>
         <ul>
-          <li>Desktop app build complete</li>
+          <li>macOS desktop app build complete</li>
           <li>Web app deployed on Vercel for live demonstration</li>
-          <li>Lint, typecheck, tests, and web build passing in project checks</li>
+          <li>iOS build wired via Capacitor</li>
+          <li>Lint, typecheck, unit tests, web build, and iOS build passing in project checks</li>
         </ul>
       </article>
     </main>
