@@ -34,9 +34,9 @@
         <span class="badge">Case Study</span>
         <h1>Mac Markdown Workspace</h1>
         <p class="lede">
-          A polished Markdown workspace with source editing, split preview, WYSIWYG mode,
-          Mermaid diagrams, math rendering, themes, and export tooling — one React codebase
-          shipping to macOS desktop, the browser, and iOS.
+          A Bear-inspired, local-first Markdown notes workspace — tag sidebar, document list,
+          and a distraction-free, structure-colored editor — built on a bespoke design system
+          and shipped from one React codebase to macOS desktop, the browser, and iOS.
         </p>
         <div class="case-study-meta">
           <a class="meta-pill" href="https://mac-markdown-workspace.vercel.app">Live Demo</a>
@@ -46,42 +46,59 @@
       <figure class="case-study-media">
         <img
           src="/portfolio/img/mac-markdown-workspace.png"
-          alt="Mac Markdown Workspace in split view: a syntax-highlighted source editor on the left and a live preview on the right showing a rendered Mermaid diagram and KaTeX math."
+          alt="Mac Markdown Workspace: tag sidebar, document list, and a split editor where markdown structure — heading hashes, bullets, checkboxes, links — renders in the teal theme accent while prose stays neutral."
           width="2880"
           height="1800"
           loading="lazy"
         />
-        <figcaption>Split view — source editor alongside live preview with Mermaid and math rendering.</figcaption>
+        <figcaption>The three-pane workspace — hashtag sidebar, document list, and the structure-colored editor beside its rendered preview.</figcaption>
       </figure>
 
       <article class="case-study-body">
         <h2>Problem</h2>
         <p>
-          Build a local-first Markdown product experience that feels like a desktop workspace,
-          while reaching the browser and mobile from the same code — so a single editor ships
-          to macOS, the web, and iOS without a rewrite per platform.
+          Build a local-first notes product that feels like Bear on the Mac — fast, quiet,
+          typography-first — while reaching the browser and mobile from the same code. One
+          design system, one component tree, three platforms, no rewrites.
+        </p>
+
+        <h2>Design System</h2>
+        <p>
+          The system's central rule: <strong>structure is colored, prose is not.</strong>
+          Heading hashes, list bullets, checkboxes, quote bars, and link brackets render in the
+          active theme's accent — in both the CodeMirror editor and the rendered preview —
+          while the words stay neutral. Four palettes (Teal, Forest, Gold, Crimson), each with
+          a derived dark variant, live as CSS custom properties; switching themes restyles the
+          entire app, editor included, with zero re-renders.
         </p>
 
         <h2>Implementation Highlights</h2>
         <ul>
-          <li>One platform-agnostic React app targeting Electron, web, and iOS through a single host-capability abstraction</li>
-          <li>Secure local-file boundaries: sandboxed renderer, all file access behind a typed API</li>
-          <li>Source editor with counters and editing modes</li>
-          <li>Rich markdown preview with Mermaid, emoji, and math support</li>
-          <li>Editable preview mode for direct content updates</li>
-          <li>Theme system (light/dark/system) and keyboard shortcut workflow</li>
-          <li>Mobile-responsive UI tuned for iOS (safe-area insets, no zoom-on-focus, no horizontal scroll)</li>
-          <li>Cross-browser file handling — native File System Access API where available, with graceful Safari fallbacks (file-input open, download-based save/export)</li>
-          <li>Export support paths for TXT, PDF, and DOCX</li>
+          <li>Notes library with live-derived titles, previews, and #hashtags — content is the single source of truth; tag filtering and instant search across everything</li>
+          <li>One platform-agnostic React app behind a typed host-capability API: notes persist as real markdown files on macOS, IndexedDB on web, and Capacitor Filesystem on iOS</li>
+          <li>Custom CodeMirror 6 highlight theme keyed to design tokens — one rule colors every structural mark in the accent</li>
+          <li>Aa popover with nine curated editor faces, a text-size scale, palette swatches, and light/dark/system — all persisted per platform</li>
+          <li>Standalone themed HTML and PDF export with WebKit-specific delivery (share sheet on touch, print-tab on Safari) that survives iOS transient-activation rules</li>
+          <li>Bear-style mobile kit: bottom tool strip plus a markdown helper bar that rides above the on-screen keyboard and inserts at the cursor</li>
+          <li>Autosave with flush-on-switch; import flows create notes rather than overwrite them</li>
         </ul>
+
+        <h2>Verification Rigor</h2>
+        <p>
+          Every phase shipped against a running app, not just unit tests: driven Chromium and
+          real Safari via WebDriver, Playwright WebKit with iPad emulation, and the packaged
+          Electron app over CDP — down to asserting that exported files land on disk. The
+          hardest bug was invisible to all of it: a clipped dropdown that programmatic clicks
+          happily "pressed" while no human could see it. The fix — and the lesson, hit-testing
+          UI with <code>elementFromPoint</code> — is now part of the project's verification
+          playbook.
+        </p>
 
         <h2>Current Status</h2>
         <ul>
-          <li>macOS desktop app build complete</li>
-          <li>Web app deployed on Vercel for live demonstration</li>
-          <li>iOS build wired via Capacitor</li>
-          <li>Open/Save/Export verified in real Safari via WebDriver and guarded by a regression test on the browser build entry</li>
-          <li>Lint, typecheck, unit tests, web build, and iOS build passing in project checks</li>
+          <li>Live on the web; macOS desktop and iOS builds from the same tree</li>
+          <li>11-phase design overhaul tracked as Gherkin user stories on GitHub — 12 of 13 shipped and closed</li>
+          <li>56 unit tests plus Playwright e2e against the packaged desktop app</li>
         </ul>
       </article>
     </main>
