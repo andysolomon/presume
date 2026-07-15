@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./styles.css">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .tile {
+    width: 1280px;
+    height: 854px;
+    display: flex;
+    background: var(--color-surface);
+  }
+  .main {
+    flex: 0 0 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+  }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 132px;
+    line-height: 1;
+    letter-spacing: 0.06em;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    color: var(--color-type);
+  }
+  .bar {
+    width: 12px;
+    height: 130px;
+    background: var(--color-accent);
+  }
+  .strip { flex: 1; display: flex; flex-direction: column; }
+  .strip > div { flex: 1; }
+</style>
+</head>
+<body>
+  <div class="tile">
+    <div class="main">
+      <span class="mark">AS<span class="bar"></span></span>
+    </div>
+    <div class="strip">
+      <div style="background: oklch(88% 0.10 75);"></div>
+      <div style="background: oklch(72% 0.13 75);"></div>
+      <div style="background: oklch(50% 0.16 55);"></div>
+      <div style="background: oklch(28% 0.008 80);"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andrew Solomon — Design Reference</title>
+<link rel="stylesheet" href="../styles.css">
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#221d16"/>
+    <text x="34" y="60" font-family="Georgia, serif" font-size="34" font-variant="small-caps" fill="#efe9df" text-anchor="middle">as</text>
+    <rect x="55" y="34" width="4" height="26" fill="#e0a34e"/>
+    <text x="70" y="60" font-family="Georgia, serif" font-size="34" font-variant="small-caps" fill="#efe9df" text-anchor="middle">r</text>
+  </svg>
+</template>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--color-surface);
+    color: var(--color-type);
+    font-family: var(--font-sans);
+    font-weight: var(--weight-regular);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color var(--duration-base) var(--ease-out-expo),
+                color var(--duration-base) var(--ease-out-expo);
+  }
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { color: var(--color-type); }
+
+  .page {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: calc(var(--space-3xl) * 1.5) var(--page-margin-x) var(--space-3xl);
+  }
+
+  /* ---- masthead ---- */
+  .masthead { text-align: center; }
+  .wordmark {
+    display: inline-flex; align-items: center; gap: var(--space-lg);
+    margin: 0; font-size: var(--type-display-size); font-weight: var(--weight-regular);
+    line-height: 1; letter-spacing: var(--type-display-tracking);
+    font-variant: small-caps; text-transform: lowercase; color: var(--color-type);
+  }
+  .wordmark .bar { display: inline-block; width: 3px; height: 0.9em; background: var(--color-accent); }
+  .masthead .eyebrow {
+    margin: var(--space-xl) 0 0; font-size: var(--type-label-size);
+    font-weight: var(--weight-bold); letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--color-mid-type);
+  }
+
+  /* ---- section scaffolding ---- */
+  .rule { border: 0; height: var(--hairline-weight); width: 100%; background: var(--color-hairline); margin: 0; }
+  .block { margin-top: var(--space-3xl); }
+  .block > .head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: var(--space-xl); margin-bottom: var(--space-xl);
+  }
+  .block > .head h2 {
+    margin: 0; font-size: var(--type-label-size); font-weight: var(--weight-bold);
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent);
+  }
+  .block > .head .n { font-size: var(--type-label-size); color: var(--color-mid-type); letter-spacing: 0.1em; }
+  .block > .head + .rule { margin-bottom: var(--space-2xl); }
+
+  /* ---- color ---- */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-xl); }
+  .swatch .chip { height: 68px; border: var(--hairline-weight) solid var(--color-hairline); }
+  .swatch .name { margin-top: var(--space-md); font-size: var(--type-label-size); font-weight: var(--weight-bold); }
+  .swatch .val { font-size: var(--type-label-size); color: var(--color-mid-type); }
+
+  /* ---- type scale ---- */
+  .type-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-xl); padding: var(--space-lg) 0; }
+  .type-row + .type-row { border-top: var(--hairline-weight) solid var(--color-hairline); }
+  .type-row .label { font-size: var(--type-label-size); color: var(--color-mid-type); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
+  .d { font-size: var(--type-display-size); letter-spacing: var(--type-display-tracking); }
+  .h { font-size: var(--type-headline-size); font-weight: var(--weight-bold); color: var(--color-accent); }
+  .t { font-size: var(--type-title-size); font-weight: var(--weight-bold); }
+  .b { font-size: var(--type-body-size); }
+  .s { font-size: var(--type-subtitle-size); }
+
+  /* ---- components ---- */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+  .spec-label { font-size: var(--type-label-size); color: var(--color-mid-type); letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 var(--space-lg); }
+  .row { display: flex; align-items: center; gap: var(--space-lg); flex-wrap: wrap; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--space-md);
+    padding: 0.5rem 0.85rem; background: transparent;
+    border: var(--hairline-weight) solid var(--color-hairline);
+    color: var(--color-type); font-family: var(--font-sans);
+    font-size: var(--type-label-size); font-weight: var(--weight-bold);
+    letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; border-radius: 0;
+    transition: border-color var(--duration-fast) var(--ease-out-expo), color var(--duration-fast) var(--ease-out-expo);
+  }
+  .btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+  .btn:disabled:hover { border-color: var(--color-hairline); color: var(--color-type); }
+  .btn svg { width: 14px; height: 14px; display: block; }
+  .icon-btn {
+    width: 2.25rem; height: 2.25rem; display: grid; place-items: center; padding: 0;
+    background: transparent; border: var(--hairline-weight) solid var(--color-hairline);
+    color: var(--color-type); cursor: pointer; border-radius: 0;
+    transition: border-color var(--duration-fast) var(--ease-out-expo), color var(--duration-fast) var(--ease-out-expo);
+  }
+  .icon-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .icon-btn svg { width: 0.95rem; height: 0.95rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .lnk-inline { color: var(--color-type); border-bottom: var(--hairline-weight) solid var(--color-hairline); }
+  .lnk-inline:hover { color: var(--color-accent); border-color: var(--color-accent); }
+  .lnk-eyebrow { font-size: var(--type-label-size); font-weight: var(--weight-bold); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* CV event specimen */
+  .cv { }
+  .cv .cv-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-xl); }
+  .cv .cv-title { margin: 0; font-size: var(--type-title-size); font-weight: var(--weight-regular); line-height: var(--leading-snug); }
+  .cv .cv-title strong { font-weight: var(--weight-bold); color: var(--color-type); }
+  .cv .cv-title .co { color: var(--color-mid-type); }
+  .cv .cv-date { font-size: var(--type-body-size); color: var(--color-accent); white-space: nowrap; }
+  .cv .cv-rule { border: 0; height: var(--hairline-weight); background: var(--color-hairline); margin: var(--space-md) 0 var(--space-lg); }
+  .cv ul { list-style: none; padding: 0; margin: 0; font-size: var(--type-body-size); line-height: var(--leading-body); display: flex; flex-direction: column; gap: var(--space-sm); }
+  .cv li { padding-left: 1.1em; text-indent: -1.1em; }
+  .cv li::before { content: '\00b7'; padding-right: 0.7em; }
+
+  .meta-row { display: flex; justify-content: space-between; align-items: baseline; font-size: var(--type-label-size); line-height: 1.9; }
+  .meta-row .k { font-weight: var(--weight-bold); letter-spacing: 0.02em; }
+
+  /* rules list */
+  .rules { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .rules li { padding-left: 1.4em; text-indent: -1.4em; font-size: var(--type-body-size); line-height: var(--leading-body); }
+  .rules li::before { content: '\00b7'; padding-right: 0.9em; color: var(--color-accent); font-weight: var(--weight-bold); }
+  .rules b { font-weight: var(--weight-bold); }
+
+  .foot { margin-top: var(--space-3xl); padding-top: var(--space-2xl); border-top: var(--hairline-weight) solid var(--color-hairline); text-align: center; font-size: var(--type-label-size); color: var(--color-mid-type); letter-spacing: 0.04em; }
+
+  .toggle-fixed { position: fixed; top: var(--space-xl); right: var(--space-xl); z-index: 10; }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+  <button class="icon-btn toggle-fixed" id="themeToggle" aria-label="Toggle theme"></button>
+
+  <div class="page">
+    <header class="masthead">
+      <h1 class="wordmark"><span>Andrew Solomon</span><span class="bar" aria-hidden="true"></span><span>Design</span></h1>
+      <p class="eyebrow">The Engineering Letter · Design Reference</p>
+    </header>
+
+    <!-- COLOR -->
+    <section class="block">
+      <div class="head"><h2>Color</h2><span class="n">01</span></div>
+      <hr class="rule">
+      <div class="swatches">
+        <div class="swatch"><div class="chip" style="background: var(--color-surface);"></div><div class="name">Surface</div><div class="val">ground</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--color-type);"></div><div class="name">Ink</div><div class="val">primary type</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--color-mid-type);"></div><div class="name">Mid-type</div><div class="val">secondary</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--color-hairline);"></div><div class="name">Hairline</div><div class="val">the only divider</div></div>
+        <div class="swatch"><div class="chip" style="background: var(--color-accent);"></div><div class="name">Accent</div><div class="val">amber · ≤ 8%</div></div>
+      </div>
+    </section>
+
+    <!-- TYPE -->
+    <section class="block">
+      <div class="head"><h2>Type — Raleway 400 / 700</h2><span class="n">02</span></div>
+      <hr class="rule">
+      <div class="type-row"><span class="d">Andrew Solomon</span><span class="label">Display · small-caps</span></div>
+      <div class="type-row"><span class="h">Experience</span><span class="label">Headline · accent</span></div>
+      <div class="type-row"><span class="t">Senior Salesforce Engineer</span><span class="label">Title · 700</span></div>
+      <div class="type-row"><span class="b">Built and scaled 2GP package pipelines across 33+ repositories.</span><span class="label">Body · 400</span></div>
+      <div class="type-row"><span class="s">Software Developer</span><span class="label">Subtitle</span></div>
+    </section>
+
+    <!-- COMPONENTS -->
+    <section class="block">
+      <div class="head"><h2>Components</h2><span class="n">03</span></div>
+      <hr class="rule">
+      <div class="grid-2">
+        <div>
+          <p class="spec-label">Buttons</p>
+          <div class="row" style="margin-bottom: var(--space-2xl);">
+            <button class="btn"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1.5v7.4M3.6 5.5 7 8.9l3.4-3.4M2.5 11.5h9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square"/></svg>Export PDF</button>
+            <button class="btn">View source</button>
+            <button class="btn" disabled>Disabled</button>
+          </div>
+          <p class="spec-label">Links</p>
+          <div class="row">
+            <a class="lnk-inline" href="#">inline link</a>
+            <a class="lnk-eyebrow" href="#">Eyebrow link</a>
+            <a href="#">accent link</a>
+          </div>
+        </div>
+        <div>
+          <p class="spec-label">Meta rows</p>
+          <div class="meta-row"><span class="k">Location</span><span>Atlanta, Georgia</span></div>
+          <div class="meta-row"><span class="k">Portfolio</span><a href="#">andrewsolomon.dev</a></div>
+          <div class="meta-row"><span class="k">Email</span><a href="#">andrewsolomon.edu@gmail.com</a></div>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-3xl);">
+        <p class="spec-label">CV event</p>
+        <article class="cv">
+          <div class="cv-head">
+            <h3 class="cv-title"><strong>Senior Salesforce Engineer / Technical Lead</strong><span class="co">  —  Thrivent Financial</span></h3>
+            <time class="cv-date">2024 — Present</time>
+          </div>
+          <hr class="cv-rule">
+          <ul>
+            <li>Built and scaled 2GP package pipelines across 33+ repositories.</li>
+            <li>Developed Lightning Web Components with GraphQL and Apex service layers for external clients.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="block">
+      <div class="head"><h2>The Five Rules</h2><span class="n">04</span></div>
+      <hr class="rule">
+      <ul class="rules">
+        <li><b>Single-Family</b> — Raleway only; hierarchy from weight and scale.</li>
+        <li><b>Two-Weight</b> — 400 and 700, nothing between.</li>
+        <li><b>One-Accent</b> — a single amber, ≤ 8% of any surface. No gradients.</li>
+        <li><b>Hairline-Is-The-Layer</b> — 1px rules only; add whitespace, never weight.</li>
+        <li><b>Flat &amp; Rectilinear</b> — no shadows, no rounded corners, ever.</li>
+      </ul>
+    </section>
+
+    <footer class="foot">Dark is canonical · toggle theme, top-right · plain HTML + CSS + JS on the Presume tokens</footer>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('themeToggle');
+      var SUN = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>';
+      var MOON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      function apply(t) {
+        root.setAttribute('data-theme', t);
+        btn.innerHTML = t === 'dark' ? SUN : MOON;
+        try { localStorage.setItem('resume-theme', t); } catch (e) {}
+      }
+      var saved = 'dark';
+      try { saved = localStorage.getItem('resume-theme') || 'dark'; } catch (e) {}
+      apply(saved);
+      btn.addEventListener('click', function () {
+        apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+</body>
+</html>

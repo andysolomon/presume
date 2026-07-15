@@ -20,7 +20,7 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  border-radius: 0;
+  border-radius: var(--radius);
   transition:
     border-color var(--duration-fast) var(--ease-out-expo),
     color var(--duration-fast) var(--ease-out-expo);

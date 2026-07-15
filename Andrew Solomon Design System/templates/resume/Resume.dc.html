@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Résumé" description="Single-sheet engineered résumé — small-caps title, hairline dividers, one amber accent, dark canon." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<style>
+  body { margin: 0; background: var(--color-surface); color: var(--color-type); }
+  .rs-sheet {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    padding: var(--page-margin-y) var(--page-margin-x);
+    font-family: var(--font-sans);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+  .rs-title { text-align: center; }
+  .rs-title-line {
+    display: inline-flex; align-items: center; gap: var(--space-lg);
+    margin: 0; font-size: var(--type-display-size); font-weight: var(--weight-regular);
+    line-height: 1; letter-spacing: var(--type-display-tracking);
+    font-variant: small-caps; text-transform: lowercase; color: var(--color-type);
+  }
+  .rs-bar { display: inline-block; width: 3px; height: 0.9em; background: var(--color-accent); }
+  .rs-subtitle { margin: var(--space-md) auto 0; font-size: var(--type-subtitle-size); letter-spacing: 0.02em; color: var(--color-type); }
+  .rs-meta { display: flex; flex-direction: column; gap: 0; }
+  .rs-meta-row { display: flex; justify-content: space-between; align-items: baseline; font-size: var(--type-label-size); line-height: 1.5; }
+  .rs-meta-label { font-weight: var(--weight-bold); letter-spacing: 0.02em; }
+  .rs-hairline { border: 0; height: var(--hairline-weight); width: 100%; background: var(--color-hairline); margin: var(--space-md) 0; }
+  .rs-section-header { text-align: center; font-size: var(--type-headline-size); font-weight: var(--weight-bold); color: var(--color-accent); letter-spacing: 0.04em; margin: 0 0 var(--space-lg); }
+  .rs-prose { max-width: 70ch; margin: 0 auto; font-size: var(--type-body-size); line-height: var(--leading-prose); }
+  .rs-list { list-style: none; padding: 0; margin: 0; font-size: var(--type-body-size); line-height: var(--leading-prose); display: flex; flex-direction: column; gap: var(--space-md); }
+  .rs-list li { padding-left: 1.1em; text-indent: -1.1em; }
+  .rs-list li::before { content: '\00b7'; padding-right: 0.7em; color: var(--color-type); }
+  .rs-skill-label { font-weight: var(--weight-bold); }
+  .rs-event { margin: var(--space-xl) 0 var(--space-2xl); }
+  .rs-event-header { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-xl); }
+  .rs-event-title-line { margin: 0; font-size: var(--type-title-size); font-weight: var(--weight-regular); line-height: var(--leading-snug); }
+  .rs-event-title { font-weight: var(--weight-bold); color: var(--color-type); }
+  .rs-event-company { color: var(--color-mid-type); }
+  .rs-event-date { font-size: var(--type-body-size); color: var(--color-accent); white-space: nowrap; }
+  .rs-event-rule { border: 0; height: var(--hairline-weight); width: 100%; background: var(--color-hairline); margin: var(--space-md) 0 var(--space-lg); }
+  .rs-bullets { list-style: none; padding: 0; margin: 0; font-size: var(--type-body-size); line-height: var(--leading-body); display: flex; flex-direction: column; gap: var(--space-sm); }
+  .rs-bullets li { padding-left: 1.1em; text-indent: -1.1em; }
+  .rs-bullets li::before { content: '\00b7'; padding-right: 0.7em; color: var(--color-type); }
+  .rs-footer { text-align: center; font-size: var(--type-body-size); padding: var(--space-2xl) 0 var(--space-xl); }
+  .rs-footer a { color: var(--color-accent); text-decoration: none; }
+  .rs-footer .rs-sep { color: var(--color-accent); padding: 0 0.5em; }
+</style>
+</helmet>
+<main class="rs-sheet">
+  <header class="rs-title">
+    <h1 class="rs-title-line">
+      <span>Andrew Solomon</span>
+      <span class="rs-bar" aria-hidden="true"></span>
+      <span>Résumé</span>
+    </h1>
+    <p class="rs-subtitle">Software Developer</p>
+  </header>
+
+  <section class="rs-meta">
+    <div class="rs-meta-row"><span class="rs-meta-label">Location</span><span>Atlanta, Georgia</span></div>
+    <div class="rs-meta-row"><span class="rs-meta-label">Portfolio</span><span>andrewsolomon.dev</span></div>
+    <div class="rs-meta-row"><span class="rs-meta-label">Email</span><span>andrewsolomon.edu@gmail.com</span></div>
+    <hr class="rs-hairline">
+  </section>
+
+  <section>
+    <h2 class="rs-section-header">Summary</h2>
+    <p class="rs-prose">Senior Salesforce Engineer &amp; Technical Lead with 15+ years of software development experience. Expert in Lightning Web Components, Apex, 2GP packages, and Experience Cloud, with a security-first approach and a modern web/AI craft.</p>
+  </section>
+
+  <section>
+    <h2 class="rs-section-header">Technical Skills</h2>
+    <ul class="rs-list">
+      <li><span class="rs-skill-label">Salesforce</span> Apex, LWC, SOQL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, 2GP Packages, Flow</li>
+      <li><span class="rs-skill-label">Frontend</span> TypeScript, React, Next.js, Tailwind CSS, GraphQL, Redux, LWC</li>
+      <li><span class="rs-skill-label">AI</span> OpenAI, Claude API, AI Agents, Prompt Engineering, MCP</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="rs-section-header">Experience</h2>
+    <article class="rs-event">
+      <header class="rs-event-header">
+        <h3 class="rs-event-title-line"><strong class="rs-event-title">Senior Salesforce Engineer / Technical Lead</strong><span class="rs-event-company">  —  Thrivent Financial</span></h3>
+        <time class="rs-event-date">2024 — Present</time>
+      </header>
+      <hr class="rs-event-rule">
+      <ul class="rs-bullets">
+        <li>Built and scaled 2GP package pipelines across 33+ repositories.</li>
+        <li>Developed Lightning Web Components with GraphQL and Apex service layers for external clients.</li>
+      </ul>
+    </article>
+  </section>
+
+  <footer class="rs-footer">
+    <a href="#">linkedin.com/in/andysolomon</a><span class="rs-sep">·</span><a href="#">github.com/andysolomon</a>
+  </footer>
+</main>
+</x-dc>
+</body>
+</html>

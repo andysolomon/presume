@@ -1,0 +1,23 @@
+<!-- @dsCard group="Type" viewport="700x300" name="Type Scale" subtitle="Six roles on a single 10pt-baseline scale" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 32px; display: flex; flex-direction: column; gap: 12px; justify-content: center; }
+  .row { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--color-hairline); padding-bottom: 10px; }
+  .row:last-child { border-bottom: 0; }
+  .samp { color: var(--color-type); flex: 1; }
+  .tok { font-size: 0.66rem; color: var(--color-mid-type); letter-spacing: 0.02em; white-space: nowrap; }
+</style>
+</head>
+<body>
+  <div class="row"><span class="samp" style="font-size:1.9rem;letter-spacing:.08em;font-variant:small-caps;text-transform:lowercase">Display</span><span class="tok">--type-display-size</span></div>
+  <div class="row"><span class="samp" style="font-size:var(--type-headline-size);font-weight:700;color:var(--color-accent)">Section Headline</span><span class="tok">--type-headline-size · 0.95rem</span></div>
+  <div class="row"><span class="samp" style="font-size:var(--type-title-size);font-weight:700">Event Title</span><span class="tok">--type-title-size · 0.875rem</span></div>
+  <div class="row"><span class="samp" style="font-size:var(--type-body-size)">Body & bullets</span><span class="tok">--type-body-size · 0.875rem</span></div>
+  <div class="row"><span class="samp" style="font-size:var(--type-subtitle-size)">Subtitle</span><span class="tok">--type-subtitle-size · 0.78rem</span></div>
+  <div class="row"><span class="samp" style="font-size:var(--type-label-size)">Meta label / eyebrow</span><span class="tok">--type-label-size · 0.7rem</span></div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- @dsCard group="Colors" viewport="700x210" name="Ink & Surface — Light (parity)" subtitle="The light theme; exact role parity with dark" -->
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; display: flex; gap: 14px; }
+  .sw { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 92px; border: 1px solid var(--color-hairline); }
+  .role { font-size: 0.8rem; font-weight: 700; color: var(--color-type); }
+  .tok { font-size: 0.66rem; color: var(--color-mid-type); letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="sw"><div class="chip" style="background: var(--color-surface)"></div><span class="role">Surface</span><span class="tok">--color-surface</span></div>
+  <div class="sw"><div class="chip" style="background: var(--color-type)"></div><span class="role">Type · Ink</span><span class="tok">--color-type</span></div>
+  <div class="sw"><div class="chip" style="background: var(--color-mid-type)"></div><span class="role">Mid-Type</span><span class="tok">--color-mid-type</span></div>
+  <div class="sw"><div class="chip" style="background: var(--color-hairline)"></div><span class="role">Hairline</span><span class="tok">--color-hairline</span></div>
+</body>
+</html>

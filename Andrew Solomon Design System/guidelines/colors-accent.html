@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x230" name="The Accent — Amber" subtitle="One accent, never two, never a gradient — ≤8% of any region" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+  .row { display: flex; gap: 14px; }
+  .sw { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .chip { height: 76px; border: 1px solid var(--color-hairline); }
+  .role { font-size: 0.8rem; font-weight: 700; color: var(--color-type); }
+  .tok { font-size: 0.66rem; color: var(--color-mid-type); letter-spacing: 0.02em; }
+  .note { font-size: 0.72rem; color: var(--color-mid-type); }
+  .note b { color: var(--color-accent); font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background: var(--color-accent)"></div><span class="role">Accent — Amber (dark)</span><span class="tok">--color-accent · oklch(72% 0.13 75)</span></div>
+    <div class="sw"><div class="chip" style="background: var(--color-accent-soft)"></div><span class="role">Accent Soft</span><span class="tok">--color-accent-soft · 18% · selection</span></div>
+    <div class="sw" data-theme="light"><div class="chip" style="background: var(--color-accent)"></div><span class="role" style="color:#1a1a1a">Accent (light)</span><span class="tok" style="color:#6b6b6b">oklch(50% 0.16 55)</span></div>
+  </div>
+  <p class="note">Carries section headers, the title <b>bar</b>, dates, and active links. It replaced the retired Salesforce process-blue.</p>
+</body>
+</html>

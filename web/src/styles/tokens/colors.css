@@ -1,0 +1,43 @@
+/*
+ * Colors — near-monochrome, one accent.
+ * Dark is CANONICAL: base :root carries the dark palette so any surface
+ * renders correctly with no [data-theme] attribute. [data-theme='light']
+ * is the parity override. Values lifted 1:1 from web/src/styles/tokens.css.
+ *
+ * The One Accent Rule: a single amber accent carries every emphasis
+ * (section headers, the title bar, dates, links). Never two accents,
+ * never a gradient. The legacy #0096FF "process blue" is RETIRED.
+ */
+
+:root {
+  /* ---- Dark (canonical) ---- */
+  --color-surface: oklch(16% 0.008 80);      /* near-black, warm-tinted */
+  --color-type: oklch(94% 0.005 80);         /* primary ink */
+  --color-mid-type: oklch(70% 0.008 80);     /* secondary layer (companies) */
+  --color-hairline: oklch(28% 0.008 80);     /* the only divider color */
+  --color-accent: oklch(72% 0.13 75);        /* amber — the one accent */
+  --color-accent-soft: oklch(72% 0.13 75 / 0.18);
+  color-scheme: dark;
+}
+
+/* explicit dark, in case a consumer sets it */
+:root[data-theme='dark'] {
+  --color-surface: oklch(16% 0.008 80);
+  --color-type: oklch(94% 0.005 80);
+  --color-mid-type: oklch(70% 0.008 80);
+  --color-hairline: oklch(28% 0.008 80);
+  --color-accent: oklch(72% 0.13 75);
+  --color-accent-soft: oklch(72% 0.13 75 / 0.18);
+  color-scheme: dark;
+}
+
+/* ---- Light (parity) ---- */
+:root[data-theme='light'] {
+  --color-surface: #ffffff;
+  --color-type: oklch(18% 0.005 80);
+  --color-mid-type: oklch(50% 0.005 80);
+  --color-hairline: oklch(89% 0.003 80);
+  --color-accent: oklch(50% 0.16 55);        /* deeper burnt-amber for AA on white */
+  --color-accent-soft: oklch(50% 0.16 55 / 0.12);
+  color-scheme: light;
+}

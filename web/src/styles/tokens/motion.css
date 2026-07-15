@@ -1,0 +1,10 @@
+/*
+ * Motion — restrained. Exponential ease-out only; no bounce, no elastic.
+ * Transitions are limited to color/border shifts (hover, theme flip).
+ */
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --duration-fast: 160ms; /* @kind other */
+  --duration-base: 240ms; /* @kind other */
+}

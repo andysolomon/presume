@@ -1,0 +1,228 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/resume/**",
+              "ui_kits/resume/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Raleway))/i]",
+        "message": "Font not provided by the design system. Available: Raleway."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|onClick|icon|size|disabled|type|className|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, href, onClick, icon, size, disabled, type, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:md|sm)$/]",
+        "message": "<Button> size must be one of 'md' | 'sm'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CVEvent'] > JSXAttribute > JSXIdentifier[name!=/^(?:title|company|companyHref|date|bullets|separator|className|key|ref|className|style|children)$/]",
+        "message": "<CVEvent> doesn't accept that prop. Declared props: title, company, companyHref, date, bullets, separator, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FooterLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|key|ref|className|style|children)$/]",
+        "message": "<FooterLink> doesn't accept that prop. Declared props: label, href."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hairline'] > JSXAttribute > JSXIdentifier[name!=/^(?:spacing|className|key|ref|className|style|children)$/]",
+        "message": "<Hairline> doesn't accept that prop. Declared props: spacing, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Hairline'] > JSXAttribute[name.name='spacing'] > Literal[value!=/^(?:none|sm|md|lg|xl)$/]",
+        "message": "<Hairline> spacing must be one of 'none' | 'sm' | 'md' | 'lg' | 'xl'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|icon|ariaLabel|onClick|type|disabled|className|key|ref|className|style|children)$/]",
+        "message": "<IconButton> doesn't accept that prop. Declared props: children, icon, ariaLabel, onClick, type, disabled, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconButton'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit|reset)$/]",
+        "message": "<IconButton> type must be one of 'button' | 'submit' | 'reset'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Link'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|variant|onClick|className|key|ref|className|style|children)$/]",
+        "message": "<Link> doesn't accept that prop. Declared props: children, href, variant, onClick, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Link'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:inline|accent|eyebrow)$/]",
+        "message": "<Link> variant must be one of 'inline' | 'accent' | 'eyebrow'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MetaRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|href|className|key|ref|className|style|children)$/]",
+        "message": "<MetaRow> doesn't accept that prop. Declared props: label, value, href, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeader'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|align|as|className|key|ref|className|style|children)$/]",
+        "message": "<SectionHeader> doesn't accept that prop. Declared props: children, align, as, className."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeader'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:center|start)$/]",
+        "message": "<SectionHeader> align must be one of 'center' | 'start'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SectionHeader'] > JSXAttribute[name.name='as'] > Literal[value!=/^(?:h1|h2|h3|h4)$/]",
+        "message": "<SectionHeader> as must be one of 'h1' | 'h2' | 'h3' | 'h4'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TitleBlock'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|title|subtitle|nameHref|className|key|ref|className|style|children)$/]",
+        "message": "<TitleBlock> doesn't accept that prop. Declared props: name, title, subtitle, nameHref, className."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "CVEvent": {
+        "replaces": []
+      },
+      "FooterLink": {
+        "replaces": []
+      },
+      "Hairline": {
+        "replaces": []
+      },
+      "IconButton": {
+        "replaces": []
+      },
+      "Link": {
+        "replaces": []
+      },
+      "MetaRow": {
+        "replaces": []
+      },
+      "SectionHeader": {
+        "replaces": []
+      },
+      "TitleBlock": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--color-accent",
+      "--color-accent-soft",
+      "--color-hairline",
+      "--color-mid-type",
+      "--color-surface",
+      "--color-type",
+      "--duration-base",
+      "--duration-fast",
+      "--ease-out-expo",
+      "--font-sans",
+      "--hairline-weight",
+      "--leading-body",
+      "--leading-prose",
+      "--leading-snug",
+      "--leading-tight",
+      "--page-margin-x",
+      "--page-margin-y",
+      "--page-max-width",
+      "--radius",
+      "--radius-none",
+      "--space-2xl",
+      "--space-3xl",
+      "--space-lg",
+      "--space-md",
+      "--space-sm",
+      "--space-xl",
+      "--space-xs",
+      "--type-body-size",
+      "--type-display-size",
+      "--type-display-tracking",
+      "--type-headline-size",
+      "--type-label-size",
+      "--type-subtitle-size",
+      "--type-title-size",
+      "--weight-bold",
+      "--weight-regular"
+    ],
+    "tokenKinds": {
+      "--color-surface": "color",
+      "--color-type": "font",
+      "--color-mid-type": "font",
+      "--color-hairline": "color",
+      "--color-accent": "color",
+      "--color-accent-soft": "color",
+      "--font-sans": "font",
+      "--weight-regular": "font",
+      "--weight-bold": "font",
+      "--type-display-size": "font",
+      "--type-display-tracking": "font",
+      "--type-headline-size": "font",
+      "--type-title-size": "font",
+      "--type-body-size": "font",
+      "--type-subtitle-size": "font",
+      "--type-label-size": "font",
+      "--leading-tight": "font",
+      "--leading-snug": "font",
+      "--leading-body": "font",
+      "--leading-prose": "font",
+      "--space-xs": "spacing",
+      "--space-sm": "spacing",
+      "--space-md": "spacing",
+      "--space-lg": "spacing",
+      "--space-xl": "spacing",
+      "--space-2xl": "spacing",
+      "--space-3xl": "spacing",
+      "--page-margin-y": "spacing",
+      "--page-margin-x": "spacing",
+      "--page-max-width": "spacing",
+      "--hairline-weight": "font",
+      "--radius": "radius",
+      "--radius-none": "radius",
+      "--ease-out-expo": "other",
+      "--duration-fast": "other",
+      "--duration-base": "other"
+    },
+    "fontFamilies": [
+      "Raleway"
+    ]
+  }
+}

@@ -1,8 +1,10 @@
-/*
- * Global resets and base styles.
- * The component CSS lives inside each LWC's shadow DOM; this layer handles
- * page-level concerns only (background, body type defaults, theme transition).
- */
+/* =============================================================================
+   BASE — Andrew Solomon Design System
+   -----------------------------------------------------------------------------
+   Page-level resets + brand defaults. Sets the dark canon ground, single-family
+   type, and the accent-aware selection + link idioms. Kept deliberately small —
+   components carry their own styling; this is the canvas they sit on.
+   ========================================================================== */
 
 *,
 *::before,
@@ -25,7 +27,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  /* Surface and ink transition together when theme flips */
+  /* Surface and ink cross-fade together when the theme flips */
   transition:
     background-color var(--duration-base) var(--ease-out-expo),
     color var(--duration-base) var(--ease-out-expo);
@@ -58,15 +60,15 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Respect reduced motion */
+/* Selection picks up the accent, softly */
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-type);
+}
+
+/* Respect reduced motion — kill the theme cross-fade */
 @media (prefers-reduced-motion: reduce) {
   html {
     transition: none;
   }
-}
-
-/* Selection picks up the accent (subtle) */
-::selection {
-  background: var(--color-accent-soft);
-  color: var(--color-type);
 }

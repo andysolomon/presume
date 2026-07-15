@@ -1,0 +1,28 @@
+/*
+ * Spacing — mirrors the LaTeX pt-based rhythm, plus page geometry.
+ * Layout breathes vertically via these steps; the system prefers more
+ * whitespace over louder rules (the Hairline-Is-The-Layer Rule).
+ */
+
+:root {
+  --space-xs: 0.125rem;   /* 2pt  */
+  --space-sm: 0.25rem;    /* 3pt  */
+  --space-md: 0.5rem;     /* 6pt  */
+  --space-lg: 0.75rem;    /* 8pt  */
+  --space-xl: 1rem;       /* 12pt */
+  --space-2xl: 1.5rem;
+  --space-3xl: 2rem;
+
+  /* Page geometry — A4 feel, web-adapted (reads on a screen, not a sheet) */
+  --page-margin-y: 2rem;
+  --page-margin-x: 2rem;
+  --page-max-width: 52rem;
+
+  /* Hairline weight — DESIGN.md mandates 0.4pt; on screen that's 1px subpixel */
+  --hairline-weight: 1px;
+
+  /* The system is rectilinear by commitment — no rounded corners.
+     --radius is the canonical corner token components read; it is 0 by rule. */
+  --radius: 0px;
+  --radius-none: 0px;
+}

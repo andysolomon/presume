@@ -1,0 +1,26 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Motion — Exponential Ease-Out" subtitle="No bounce, no spring; color/opacity shifts and a theme cross-fade" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 24px 32px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+  .track { position: relative; height: 3px; background: var(--color-hairline); }
+  .dot { position: absolute; top: -4.5px; left: 0; width: 12px; height: 12px; background: var(--color-accent); animation: slide 2.4s var(--ease-out-expo) infinite alternate; }
+  @keyframes slide { to { left: calc(100% - 12px); } }
+  @media (prefers-reduced-motion: reduce) { .dot { animation: none; left: calc(100% - 12px); } }
+  .toks { display: flex; gap: 28px; }
+  .tok { font-size: 0.7rem; color: var(--color-mid-type); letter-spacing: 0.02em; }
+  .tok b { color: var(--color-type); font-weight: 700; display: block; }
+</style>
+</head>
+<body>
+  <div class="track"><span class="dot"></span></div>
+  <div class="toks">
+    <span class="tok"><b>--ease-out-expo</b>cubic-bezier(0.16, 1, 0.3, 1)</span>
+    <span class="tok"><b>--duration-fast</b>160ms · hover / focus</span>
+    <span class="tok"><b>--duration-base</b>240ms · theme cross-fade</span>
+  </div>
+</body>
+</html>

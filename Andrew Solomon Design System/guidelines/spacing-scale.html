@@ -1,0 +1,24 @@
+<!-- @dsCard group="Spacing" viewport="700x280" name="Spacing Scale" subtitle="A pt-derived rhythm, xs → 3xl" -->
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 32px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+  .row { display: flex; align-items: center; gap: 16px; }
+  .bar { height: 14px; background: var(--color-accent); }
+  .tok { font-size: 0.68rem; color: var(--color-mid-type); letter-spacing: 0.02em; white-space: nowrap; }
+  .name { font-size: 0.72rem; color: var(--color-type); font-weight: 700; width: 56px; }
+</style>
+</head>
+<body>
+  <div class="row"><span class="name">xs</span><span class="bar" style="width: var(--space-xs)"></span><span class="tok">2px</span></div>
+  <div class="row"><span class="name">sm</span><span class="bar" style="width: var(--space-sm)"></span><span class="tok">4px</span></div>
+  <div class="row"><span class="name">md</span><span class="bar" style="width: var(--space-md)"></span><span class="tok">8px</span></div>
+  <div class="row"><span class="name">lg</span><span class="bar" style="width: var(--space-lg)"></span><span class="tok">12px</span></div>
+  <div class="row"><span class="name">xl</span><span class="bar" style="width: var(--space-xl)"></span><span class="tok">16px</span></div>
+  <div class="row"><span class="name">2xl</span><span class="bar" style="width: var(--space-2xl)"></span><span class="tok">24px</span></div>
+  <div class="row"><span class="name">3xl</span><span class="bar" style="width: var(--space-3xl)"></span><span class="tok">32px</span></div>
+</body>
+</html>
