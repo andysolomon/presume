@@ -273,6 +273,7 @@ function buildResume(tex) {
   const src = stripComments(tex);
   const header = parseHeader(src);
   const meta = parseMeta(src);
+  meta.push({ label: 'Portfolio', value: 'Salesforce demo apps', href: '/projects/' });
   const sections = parseSections(src);
   const footer = parseFooter(src);
 
@@ -304,7 +305,7 @@ function buildResume(tex) {
 function emitTs(resume) {
   const banner =
     '// AUTO-GENERATED from main.tex by scripts/parse-resume.mjs. Do not edit by hand.\n\n';
-  const types = `export type MetaItem = { label: string; value: string };
+  const types = `export type MetaItem = { label: string; value: string; href?: string };
 export type SkillItem = { label: string; value: string };
 export type CvEvent = {
   date: string;

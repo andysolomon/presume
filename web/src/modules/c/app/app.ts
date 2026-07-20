@@ -61,12 +61,11 @@ export default class App extends LightningElement {
   get metaItems(): RenderedMeta[] {
     return resume.meta.map((m, i) => {
       const isEmail = m.value.includes('@');
-      const isPortfolio = m.label.toLowerCase() === 'portfolio';
-      const href = isEmail ? `mailto:${m.value}` : isPortfolio ? '/portfolio' : '';
+      const href = m.href ?? (isEmail ? `mailto:${m.value}` : '');
       return {
         key: `meta-${i}`,
         label: m.label,
-        value: isPortfolio ? `${m.value}/portfolio` : m.value,
+        value: m.value,
         href,
         isLink: href !== '',
       };
