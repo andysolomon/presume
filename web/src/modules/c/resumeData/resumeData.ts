@@ -1,6 +1,6 @@
 // AUTO-GENERATED from main.tex by scripts/parse-resume.mjs. Do not edit by hand.
 
-export type MetaItem = { label: string; value: string };
+export type MetaItem = { label: string; value: string; href?: string };
 export type SkillItem = { label: string; value: string };
 export type CvEvent = {
   date: string;
@@ -33,15 +33,16 @@ export const resume: Resume = {
       "value": "Atlanta, Georgia"
     },
     {
-      "label": "Portfolio",
-      "value": "andrewsolomon.dev"
-    },
-    {
       "label": "Email",
       "value": "andrewsolomon.edu@gmail.com"
+    },
+    {
+      "label": "Portfolio",
+      "value": "Salesforce demo apps",
+      "href": "/projects/"
     }
   ],
-  "summary": "Senior Salesforce Engineer & Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.",
+  "summary": "Senior Salesforce Engineer with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.",
   "skills": [
     {
       "label": "Salesforce",
@@ -71,7 +72,7 @@ export const resume: Resume = {
   "experience": [
     {
       "date": "2024 — Present",
-      "title": "Senior Salesforce Engineer / Technical Lead",
+      "title": "Senior Salesforce Engineer",
       "company": "Thrivent Financial",
       "companyHref": "https://www.thrivent.com",
       "bullets": [
