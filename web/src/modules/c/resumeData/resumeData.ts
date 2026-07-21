@@ -34,11 +34,11 @@ export const resume: Resume = {
     },
     {
       "label": "Email",
-      "value": "andrewsolomon.edu@gmail.com"
+      "value": "hi@andrewsolomon.dev"
     },
     {
       "label": "Portfolio",
-      "value": "Salesforce demo apps",
+      "value": "Showcase",
       "href": "/projects"
     }
   ],
