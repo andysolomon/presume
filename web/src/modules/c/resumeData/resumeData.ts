@@ -39,7 +39,7 @@ export const resume: Resume = {
     {
       "label": "Portfolio",
       "value": "Salesforce demo apps",
-      "href": "/projects/"
+      "href": "/projects"
     }
   ],
   "summary": "Senior Salesforce Engineer with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.",
