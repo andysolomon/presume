@@ -19,7 +19,7 @@
       "layoutTemplate": "$rootDir/src/layouts/main.html",
       "properties": {
         "title": "Andrew Solomon — Resume",
-        "description": "Senior Salesforce Engineer & Technical Lead. Bridge identity: deep platform credibility plus modern web/AI craftsmanship."
+        "description": "Senior Salesforce Engineer. Bridge identity: deep platform credibility plus modern web/AI craftsmanship."
       }
     },
     {
@@ -38,8 +38,8 @@
       "rootComponent": "c/kapitusResume",
       "layoutTemplate": "$rootDir/src/layouts/main.html",
       "properties": {
-        "title": "Andrew Solomon — Salesforce Tech Lead",
-        "description": "Salesforce Tech Lead resume view tailored for Kapitus — Sales Cloud, Experience Cloud, LWC, Apex, Triggers, Batch Apex, integrations (REST/SOAP/Bulk), DevOps, and agile leadership."
+        "title": "Andrew Solomon — Salesforce Engineer",
+        "description": "Salesforce-focused resume view tailored for Kapitus — Sales Cloud, Experience Cloud, LWC, Apex, Triggers, Batch Apex, integrations (REST/SOAP/Bulk), DevOps, and agile delivery."
       }
     }
   ]

@@ -3,7 +3,6 @@ import resume from 'c/resumeData';
 
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'resume-theme';
-const MAIN_RESUME_HREF = '/';
 
 /* VERIFY: best-guess month prefixes for the Kapitus recruiter request.
    Edit this map to correct any dates without touching the rest of the file. */
@@ -21,17 +20,17 @@ const DATE_OVERRIDES: Record<string, string> = {
 };
 
 const KAPITUS_SUBTITLE =
-  'Salesforce Tech Lead — Sales Cloud, Experience Cloud, LWC, Apex, integrations, and team leadership';
+  'Senior Salesforce Engineer — Sales Cloud, Experience Cloud, LWC, Apex, integrations, and agile delivery';
 
 const KAPITUS_SUMMARY =
-  'Salesforce Tech Lead with 15+ years of software development and 20+ end-to-end Salesforce implementations across regulated industries including financial services and federal agencies. Hands-on expertise across Apex, Triggers, Batch Apex, Lightning Web Components, Visualforce, and Experience Cloud, paired with deep integration experience using REST, SOAP, and Bulk API 2.0. Proven track record leading agile teams, establishing engineering standards, owning DevOps (Git, SFDX, CI/CD), and shipping scalable, secure solutions aligned to business goals.';
+  'Senior Salesforce Engineer with 15+ years of software development and 20+ end-to-end Salesforce implementations across regulated industries including financial services and federal agencies. Hands-on expertise across Apex, Triggers, Batch Apex, Lightning Web Components, Visualforce, and Experience Cloud, paired with deep integration experience using REST, SOAP, and Bulk API 2.0. Proven track record collaborating across agile teams, establishing engineering standards, owning DevOps (Git, SFDX, CI/CD), and shipping scalable, secure solutions aligned to business goals.';
 
 const KAPITUS_HIGHLIGHTS = [
-  'Tech Lead at a Fortune 500 financial-services Salesforce org — owning 2GP package architecture, AWS-backed Bulk API 2.0 pipelines, and platform engineering standards.',
+  'Senior Salesforce Engineer at a Fortune 500 financial-services Salesforce org — owning 2GP package architecture, AWS-backed Bulk API 2.0 pipelines, and platform engineering standards.',
   'Hands-on across the Salesforce stack: Apex, Triggers, Batch Apex, LWC, Visualforce, Flow, SOQL — with comprehensive Apex and Jest unit testing.',
   'Integration depth across REST, SOAP, and Bulk API 2.0 with middleware and external systems; AWS S3 streaming pipelines for large result sets.',
   'Experience Cloud delivery for 10,000+ portal users with SSO/JIT provisioning, queue-based sharing, and persona-based security testing.',
-  'Agile leadership — sprint planning, stand-ups, grooming, retrospectives — plus code reviews, mentoring, and engineering documentation across multiple teams.',
+  'Agile delivery — sprint planning, stand-ups, grooming, retrospectives — plus code reviews, mentoring, and engineering documentation across multiple teams.',
   'Modern DevOps: GitHub Actions, SFDX, multi-tier release pipelines, Playwright + Jest test coverage, design tokens, and AI-assisted engineering workflows.',
 ];
 
@@ -57,8 +56,8 @@ const KAPITUS_SKILLS = [
     value: 'AWS (S3, IAM, Lambda-adjacent integrations), Agentforce, OpenAI, Claude API, MCP, prompt engineering',
   },
   {
-    label: 'Leadership',
-    value: 'Tech Lead, agile delivery, sprint planning, code review standards, mentoring, cross-functional collaboration with product, QA, and operations',
+    label: 'Collaboration',
+    value: 'Agile delivery, sprint planning, code review standards, mentoring, cross-functional collaboration with product, QA, and operations',
   },
 ];
 
@@ -134,12 +133,11 @@ export default class KapitusResume extends LightningElement {
   get metaItems(): RenderedMeta[] {
     return resume.meta.map((m, i) => {
       const isEmail = m.value.includes('@');
-      const isPortfolio = m.label.toLowerCase() === 'portfolio';
-      const href = isEmail ? `mailto:${m.value}` : isPortfolio ? '/portfolio' : '';
+      const href = isEmail ? `mailto:${m.value}` : '';
       return {
         key: `meta-${i}`,
         label: m.label,
-        value: isPortfolio ? `${m.value}/portfolio` : m.value,
+        value: m.value,
         href,
         isLink: href !== '',
       };
@@ -178,8 +176,10 @@ export default class KapitusResume extends LightningElement {
     }));
   }
 
-  get mainResumeHref(): string {
-    return MAIN_RESUME_HREF;
+  get pdfHref(): string {
+    return this.theme === 'light'
+      ? '/assets/andrewsolomon-light.pdf'
+      : '/assets/andrewsolomon.pdf';
   }
 
   handleThemeToggle(): void {

@@ -1,0 +1,29 @@
+/*
+ * Top-right chrome: theme toggle.
+ * Matches the design system IconButton idiom — hairline, flat, amber only
+ * when active or hovered. No fill, no radius.
+ */
+
+:host {
+  position: fixed;
+  top: var(--space-xl);
+  right: var(--space-xl);
+  z-index: 10;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  :host {
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .chrome {
+    gap: var(--space-sm);
+  }
+}

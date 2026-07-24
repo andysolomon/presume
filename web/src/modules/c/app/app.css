@@ -141,30 +141,6 @@
   max-width: 68ch;
 }
 
-.alternate-link-row {
-  margin: var(--space-lg) 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-lg);
-}
-
-.alternate-link {
-  color: var(--color-accent);
-  font-size: var(--type-label-size);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color var(--duration-fast) var(--ease-out-expo);
-}
-
-.alternate-link:hover,
-.alternate-link:focus-visible {
-  color: var(--color-type);
-  outline: none;
-}
-
 /* --- Meta section --------------------------------------------------- */
 
 .meta {

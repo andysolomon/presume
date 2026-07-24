@@ -3,8 +3,6 @@ import resume from 'c/resumeData';
 
 type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'resume-theme';
-const GOVERNMENT_PAGE_HREF = '/government-experience';
-const MAIN_RESUME_HREF = '/';
 const GOVERNMENT_COMPANY_MARKER = 'Department of Veterans Affairs';
 
 const GOVERNMENT_SUMMARY =
@@ -81,12 +79,11 @@ export default class GovernmentResume extends LightningElement {
   get metaItems(): RenderedMeta[] {
     return resume.meta.map((m, i) => {
       const isEmail = m.value.includes('@');
-      const isPortfolio = m.label.toLowerCase() === 'portfolio';
-      const href = isEmail ? `mailto:${m.value}` : isPortfolio ? '/portfolio' : '';
+      const href = isEmail ? `mailto:${m.value}` : '';
       return {
         key: `meta-${i}`,
         label: m.label,
-        value: isPortfolio ? `${m.value}/portfolio` : m.value,
+        value: m.value,
         href,
         isLink: href !== '',
       };
@@ -129,12 +126,10 @@ export default class GovernmentResume extends LightningElement {
     }));
   }
 
-  get mainResumeHref(): string {
-    return MAIN_RESUME_HREF;
-  }
-
-  get governmentPageHref(): string {
-    return GOVERNMENT_PAGE_HREF;
+  get pdfHref(): string {
+    return this.theme === 'light'
+      ? '/assets/andrewsolomon-light.pdf'
+      : '/assets/andrewsolomon.pdf';
   }
 
   handleThemeToggle(): void {

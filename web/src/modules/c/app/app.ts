@@ -104,6 +104,12 @@ export default class App extends LightningElement {
     return KAPITUS_PAGE_HREF;
   }
 
+  get pdfHref(): string {
+    return this.theme === 'light'
+      ? '/assets/andrewsolomon-light.pdf'
+      : '/assets/andrewsolomon.pdf';
+  }
+
   handleThemeToggle(): void {
     this.theme = this.theme === 'dark' ? 'light' : 'dark';
     try {

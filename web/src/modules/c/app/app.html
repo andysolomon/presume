@@ -1,7 +1,7 @@
 <template>
   <a
     class="pdf-export"
-    href="/assets/andrewsolomon.pdf"
+    href={pdfHref}
     download="andrewsolomon-resume.pdf"
     aria-label="Download Andrew Solomon's resume as a PDF"
   >
@@ -10,7 +10,10 @@
     </svg>
     <span class="pdf-export-label">Export PDF</span>
   </a>
-  <c-theme-toggle theme={theme} ontoggle={handleThemeToggle}></c-theme-toggle>
+  <c-top-controls
+    theme={theme}
+    onthemetoggle={handleThemeToggle}
+  ></c-top-controls>
 
   <main class="resume" aria-label="Andrew Solomon — Resume">
     <header class="title-block">
@@ -31,10 +34,6 @@
         <span class="name">{header.title}</span>
       </h1>
       <p class="subtitle">{header.subtitle}</p>
-      <p class="alternate-link-row">
-        <a class="alternate-link" href={governmentPageHref}>View government experience</a>
-        <a class="alternate-link" href={kapitusPageHref}>View Salesforce Tech Lead resume</a>
-      </p>
     </header>
 
     <section class="meta" aria-label="Contact">

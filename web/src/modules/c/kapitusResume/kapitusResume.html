@@ -1,7 +1,7 @@
 <template>
   <a
     class="pdf-export"
-    href="/assets/andrewsolomon.pdf"
+    href={pdfHref}
     download="andrewsolomon-kapitus-resume.pdf"
     aria-label="Download Andrew Solomon's Kapitus-tailored resume as a PDF"
   >
@@ -10,9 +10,12 @@
     </svg>
     <span class="pdf-export-label">Export PDF</span>
   </a>
-  <c-theme-toggle theme={theme} ontoggle={handleThemeToggle}></c-theme-toggle>
+  <c-top-controls
+    theme={theme}
+    onthemetoggle={handleThemeToggle}
+  ></c-top-controls>
 
-  <main class="resume" aria-label="Andrew Solomon — Salesforce Tech Lead Resume">
+  <main class="resume" aria-label="Andrew Solomon — Salesforce Engineer Resume">
     <header class="title-block">
       <h1 class="title-line">
         <template lwc:if={hasNameLink}>
@@ -29,9 +32,6 @@
         </template>
       </h1>
       <p class="subtitle">{header.subtitle}</p>
-      <p class="alternate-link-row">
-        <a class="alternate-link" href={mainResumeHref}>Back to main resume</a>
-      </p>
     </header>
 
     <section class="meta" aria-label="Contact">
@@ -100,7 +100,7 @@
     <section class="block">
       <h2 class="section-header">Adjacent Engineering Experience</h2>
       <p class="prose section-intro">
-        Pre-Salesforce roles that built the foundation for Tech Lead delivery — full-stack engineering, frontend architecture, AWS infrastructure, and cross-functional leadership.
+        Pre-Salesforce roles that built the foundation for senior engineering delivery — full-stack engineering, frontend architecture, AWS infrastructure, and cross-functional collaboration.
       </p>
       <template for:each={adjacentExperience} for:item="e">
         <article key={e.key} class="event">
