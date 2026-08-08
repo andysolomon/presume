@@ -273,7 +273,6 @@ function buildResume(tex) {
   const src = stripComments(tex);
   const header = parseHeader(src);
   const meta = parseMeta(src);
-  meta.push({ label: 'Portfolio', value: 'Showcase', href: '/projects' });
   const sections = parseSections(src);
   const footer = parseFooter(src);
 
