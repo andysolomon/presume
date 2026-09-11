@@ -561,7 +561,7 @@ const resumeData = {
     value: 'andrewsolomon.edu@gmail.com',
     href: 'mailto:andrewsolomon.edu@gmail.com'
   }],
-  summary: 'Senior Salesforce Engineer & Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.',
+  summary: 'Senior Salesforce Engineer with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.',
   skills: [{
     label: 'Salesforce',
     value: 'Apex, LWC, SOQL, SOSL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, OmniStudio, 2GP Packages, Flow'
@@ -583,7 +583,7 @@ const resumeData = {
   }],
   experience: [{
     date: '2024 — Present',
-    title: 'Senior Salesforce Engineer / Technical Lead',
+    title: 'Senior Salesforce Engineer',
     company: 'Thrivent Financial',
     companyHref: 'https://www.thrivent.com',
     bullets: ['Built and scaled 2GP package pipelines across 33+ repositories, managing multiple SFDX projects in parallel across multi-tier environments', 'Developed Lightning Web Components with GraphQL and Apex service layers that integrate with Java-based connected apps for external clients', 'Architected a Salesforce Bulk API 2.0 + Amazon S3 pipeline that streams large-scale query results to S3 and generates custom object artifacts', 'Established Apex and LWC testing standards, including dependency-isolated unit tests, templated Jest guidance, and Playwright automation']
@@ -653,7 +653,7 @@ function ResumeScreen({
   }, "View government experience"), /*#__PURE__*/React.createElement(Link, {
     href: "#",
     variant: "eyebrow"
-  }, "View Salesforce Tech Lead resume")), /*#__PURE__*/React.createElement("section", {
+  }, "View government experience")), /*#__PURE__*/React.createElement("section", {
     className: "meta-block"
   }, d.meta.map(m => /*#__PURE__*/React.createElement(MetaRow, {
     key: m.label,

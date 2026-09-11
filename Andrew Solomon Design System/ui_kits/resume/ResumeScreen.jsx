@@ -13,7 +13,7 @@ const resumeData = {
     { label: 'Email', value: 'andrewsolomon.edu@gmail.com', href: 'mailto:andrewsolomon.edu@gmail.com' },
   ],
   summary:
-    'Senior Salesforce Engineer & Technical Lead with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.',
+    'Senior Salesforce Engineer with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.',
   skills: [
     { label: 'Salesforce', value: 'Apex, LWC, SOQL, SOSL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, OmniStudio, 2GP Packages, Flow' },
     { label: 'Design', value: 'Figma, SLDS 2, Design Tokens, IBM Carbon Design System, Sass' },
@@ -25,7 +25,7 @@ const resumeData = {
   experience: [
     {
       date: '2024 — Present',
-      title: 'Senior Salesforce Engineer / Technical Lead',
+      title: 'Senior Salesforce Engineer',
       company: 'Thrivent Financial',
       companyHref: 'https://www.thrivent.com',
       bullets: [
@@ -99,7 +99,6 @@ function ResumeScreen({ ns }) {
 
       <div className="alt-row">
         <Link href="#" variant="eyebrow">View government experience</Link>
-        <Link href="#" variant="eyebrow">View Salesforce Tech Lead resume</Link>
       </div>
 
       <section className="meta-block">

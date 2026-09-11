@@ -171,8 +171,9 @@ function parseMeta(src) {
     const a = readArg(src, m.index + '\\metasection'.length);
     const b = readArg(src, a.end);
     const label = deLatex(b.body);
-    const value = deLatex(a.body);
-    out.push({ label, value });
+    const href = extractHref(a.body);
+    const value = deLatex(href ? href.text : a.body);
+    out.push(href ? { label, value, href: href.url } : { label, value });
     re.lastIndex = b.end;
   }
   return out;

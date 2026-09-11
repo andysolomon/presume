@@ -35,6 +35,11 @@ export const resume: Resume = {
     {
       "label": "Email",
       "value": "hi@andrewsolomon.dev"
+    },
+    {
+      "label": "Portfolio",
+      "value": "Apps",
+      "href": "https://andrewsolomon.dev/projects/"
     }
   ],
   "summary": "Senior Salesforce Engineer with 15+ years of software development experience and 20+ full end-to-end Salesforce implementations. Deep Apex specialist across trigger frameworks, asynchronous processing, batch integrations, fflib patterns, governor-limit optimization, and enterprise test architecture. Expert in Lightning Web Components, Apex, 2nd-generation packages, and Experience Cloud. Proven track record leading technical teams, establishing engineering standards, and delivering enterprise-scale solutions for Fortune 500 companies and federal agencies, including the VA. Security-first approach with deep expertise in sharing models, persona-based testing, CRUD/FLS enforcement, and least-privilege Apex design. Holds an active national security clearance.",
@@ -45,11 +50,15 @@ export const resume: Resume = {
     },
     {
       "label": "Design",
-      "value": "Figma, SLDS 2, Design Tokens, IBM Carbon Design System, Sass"
+      "value": "Figma, SLDS 2, Design Tokens, IBM Carbon Design System"
     },
     {
       "label": "AI",
-      "value": "OpenAI, Claude API, AI Agents, Prompt Engineering, MCP"
+      "value": "OpenAI, Anthropic SDK, AI Agents, Harness Engineering, MCP"
+    },
+    {
+      "label": "Agent",
+      "value": "AWS Bedrock, AWS Bedrock AgentCore"
     },
     {
       "label": "DevOps",
@@ -57,11 +66,11 @@ export const resume: Resume = {
     },
     {
       "label": "Frontend",
-      "value": "TypeScript, React, Next.js, Tailwind CSS, GraphQL, Redux, LWC"
+      "value": "TypeScript, React, Next.js, Tailwind, GraphQL, ThreeJs, LWC"
     },
     {
       "label": "Backend",
-      "value": "Node, Java, Supabase, Cloudflare Workers, Vercel Functions, REST APIs, AWS S3"
+      "value": "Node, Java, Java Spring Boot, Supabase, Cloudflare Workers, Vercel Functions, REST APIs, AWS S3, AWS DynamoDB"
     }
   ],
   "experience": [

@@ -4,7 +4,7 @@ One experience or education entry. A bold role and mid-grey company sit on the l
 
 ```jsx
 <CVEvent
-  title="Senior Salesforce Engineer / Technical Lead"
+  title="Senior Salesforce Engineer"
   company="Thrivent Financial"
   companyHref="https://www.thrivent.com"
   date="2024 — Present"

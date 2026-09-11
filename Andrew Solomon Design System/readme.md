@@ -1,8 +1,8 @@
 # Andrew Solomon — Résumé Design System
 
 The design system behind **[andrewsolomon.dev](https://andrewsolomon.dev)** — the
-single-sheet résumé of Andrew Solomon, a Senior Salesforce Engineer / Technical
-Lead who is also a modern web & AI craftsman. This system exists so that future
+single-sheet résumé of Andrew Solomon, a Senior Salesforce Engineer who is also
+a modern web & AI craftsman. This system exists so that future
 additions to the site — the résumé itself and small HTML/CSS/JS skill demos —
 all speak in one deliberate, engineered voice.
 

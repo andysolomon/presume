@@ -91,7 +91,7 @@
       },
       "title": {
         "displayName": "Event Title",
-        "purpose": "Bold role title inside \\cvevent (e.g. 'Senior Salesforce Engineer / Technical Lead'). Always paired with mid-type-grey company name."
+        "purpose": "Bold role title inside \\cvevent (e.g. 'Senior Salesforce Engineer'). Always paired with mid-type-grey company name."
       },
       "body": {
         "displayName": "Body Text",
@@ -134,7 +134,7 @@
       "kind": "custom",
       "refersTo": "event-title",
       "description": "Two-column header inside \\cvevent — bold role + mid-grey company on the left, accent-blue date right-aligned, followed by a hairline rule.",
-      "html": "<header class=\"ds-cv-event-header\"><h3 class=\"ds-cv-event-title-line\"><strong class=\"ds-cv-event-title\">Senior Salesforce Engineer / Technical Lead</strong> <span class=\"ds-cv-event-company\">Thrivent Financial</span></h3><time class=\"ds-cv-event-date\">2025 — Present</time></header><hr class=\"ds-hairline-rule\" />",
+      "html": "<header class=\"ds-cv-event-header\"><h3 class=\"ds-cv-event-title-line\"><strong class=\"ds-cv-event-title\">Senior Salesforce Engineer</strong> <span class=\"ds-cv-event-company\">Thrivent Financial</span></h3><time class=\"ds-cv-event-date\">2025 — Present</time></header><hr class=\"ds-hairline-rule\" />",
       "css": ".ds-cv-event-header { display: flex; justify-content: space-between; align-items: baseline; gap: 16pt; font-family: Raleway, sans-serif; font-size: 10pt; line-height: 1.2; } .ds-cv-event-title-line { font-size: 10pt; font-weight: 400; margin: 0; } .ds-cv-event-title { font-weight: 700; color: #000; } .ds-cv-event-company { color: #6E6E6E; } .ds-cv-event-date { color: #0096FF; font-size: 10pt; white-space: nowrap; } .ds-hairline-rule { border: 0; height: 0.4pt; background: #E1E1E1; margin: 6pt 0; }"
     },
     {

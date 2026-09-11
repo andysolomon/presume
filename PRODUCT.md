@@ -10,7 +10,7 @@ Senior engineering and staff-level hiring managers reading this PDF on a modern 
 
 ## Product Purpose
 
-A personal-marketing artifact that positions Andrew Solomon as a **Senior Salesforce Engineer / Technical Lead who is also a modern web and AI craftsman** — a deliberate bridge identity. Success is the reader, in their first 5 seconds, registering both halves of that identity (deep Salesforce platform credibility *and* current taste in web/AI tooling) and treating the rest of the resume as proof rather than introduction.
+A personal-marketing artifact that positions Andrew Solomon as a **Senior Salesforce Engineer who is also a modern web and AI craftsman** — a deliberate bridge identity. Success is the reader, in their first 5 seconds, registering both halves of that identity (deep Salesforce platform credibility *and* current taste in web/AI tooling) and treating the rest of the resume as proof rather than introduction.
 
 ## Brand Personality
 
