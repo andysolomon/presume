@@ -10,7 +10,7 @@
 
 import { createRequire } from 'node:module';
 import { createServer } from 'node:http';
-import { existsSync, readFileSync, statSync } from 'node:fs';
+import { copyFileSync, existsSync, readFileSync, statSync } from 'node:fs';
 import { dirname, extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -19,6 +19,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
 const siteDir = resolve(repoRoot, 'web/site');
 const assetsDir = resolve(repoRoot, 'web/src/assets');
+// lwr build copies src/assets into site/assets, so printing after the build
+// would leave the deployed copy stale. Write both when site/ is present.
+const siteAssetsDir = resolve(siteDir, 'assets');
 
 const TARGETS = [
   { theme: 'dark', file: 'andrewsolomon-steampunk.pdf' },
@@ -36,14 +39,21 @@ const MIME = {
   '.png': 'image/png',
 };
 
+// Returns null (rather than throwing) when Playwright is unavailable: this runs
+// inside `npm run ship`, and a missing browser should warn, not abort a release.
 function loadPlaywright() {
   try {
     return require('playwright');
   } catch {
-    throw new Error(
-      'playwright is not installed. Run `npm install` at the repo root (or `npm i -D playwright`).',
-    );
+    return null;
   }
+}
+
+function skip(reason) {
+  console.warn(`build-steampunk-pdf: SKIPPED — ${reason}`);
+  console.warn('  The committed PDFs in web/src/assets were left as-is. If the');
+  console.warn('  /steampunk page changed, they are now stale: install Playwright');
+  console.warn('  (`npm install` at the repo root) and re-run `npm run pdf:steampunk`.');
 }
 
 // Minimal static server over web/site/ that mirrors Vercel's cleanUrls behaviour
@@ -74,7 +84,12 @@ async function main() {
   if (!existsSync(join(siteDir, 'steampunk', 'index.html'))) {
     throw new Error(`web/site/steampunk/index.html not found. Run \`npm run web:build\` first.`);
   }
-  const { chromium } = loadPlaywright();
+  const playwright = loadPlaywright();
+  if (!playwright) {
+    skip('playwright is not installed');
+    return;
+  }
+  const { chromium } = playwright;
   const server = await serveSite();
   const { port } = server.address();
   const browser = await chromium.launch();
@@ -102,6 +117,10 @@ async function main() {
       });
       await context.close();
       console.log(`build-steampunk-pdf: wrote ${out} (${theme})`);
+      if (existsSync(siteAssetsDir)) {
+        copyFileSync(out, join(siteAssetsDir, file));
+        console.log(`build-steampunk-pdf: copied into ${join(siteAssetsDir, file)}`);
+      }
     }
   } finally {
     await browser.close();
@@ -110,6 +129,10 @@ async function main() {
 }
 
 main().catch((err) => {
+  if (/executable doesn't exist|Failed to launch|browserType\.launch/i.test(err.message)) {
+    skip(`Chromium is not available (${err.message.split('\n')[0]})`);
+    process.exit(0);
+  }
   console.error('build-steampunk-pdf:', err.message);
   process.exit(1);
 });

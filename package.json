@@ -16,7 +16,7 @@
     "web:build": "npm --prefix web run build",
     "web:typecheck": "npm --prefix web run typecheck",
     "dev": "npm run sync && npm run web:dev",
-    "build": "npm run sync && npm run pdf && npm run web:build",
+    "build": "npm run sync && npm run pdf && npm run web:build && npm run pdf:steampunk",
     "ship": "node scripts/ship.mjs",
     "clean": "rm -f main.aux main.log main.out && rm -rf web/site web/dist web/__lwr_cache__ web/.lwr"
   },

@@ -23,6 +23,9 @@ const commitMessage = explicitMessage || defaultMessage;
 const REQUIRED_ARTIFACTS = [
   'main.pdf',
   'web/site/index.html',
+  'web/site/steampunk/index.html',
+  'web/site/assets/andrewsolomon-steampunk.pdf',
+  'web/site/assets/andrewsolomon-steampunk-light.pdf',
   'web/src/modules/c/resumeData/resumeData.ts',
 ];
 
@@ -82,6 +85,10 @@ function main() {
   step('sync resume data from main.tex', () => run('npm run sync'));
   step('build PDF (pdflatex)', () => run('npm run pdf'));
   step('build website (LWR)', () => run('npm run web:build'));
+  // Printed from the built /steampunk page, so the downloadable PDF always
+  // matches what the route renders — including changes that reach it through
+  // the shared resume data. Warns and skips if Chromium isn't available.
+  step('print Steampunk PDF from built page', () => run('npm run pdf:steampunk'));
   step('typecheck website', () => run('npm run web:typecheck'));
   step('verify artifacts', verifyArtifacts);
 

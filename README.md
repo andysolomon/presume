@@ -40,15 +40,17 @@ Other scripts:
 
 Besides `/`, the site serves tailored views at `/government-experience`, `/kapitus`, and `/steampunk`. Each is an LWC under `web/src/modules/c/` that reuses the generated resume data with its own framing.
 
-The `/steampunk` PDF is printed from the page itself (so it always matches what the route renders) rather than from LaTeX:
+The `/steampunk` PDF is printed from the page itself rather than from LaTeX, so it always matches what the route renders — including changes that reach the page through the shared resume data from `main.tex`. Both `npm run build` and `npm run ship` do this for you; it writes to `web/src/assets/` and, when a build output is present, into `web/site/assets/` so a deploy can't serve a stale copy.
+
+To run it alone:
 
 ```bash
 npm install            # installs Playwright (root devDependency)
-npm run web:build
-npm run pdf:steampunk  # writes web/src/assets/andrewsolomon-steampunk{,-light}.pdf
+npm run web:build      # site/ must exist first
+npm run pdf:steampunk  # writes andrewsolomon-steampunk{,-light}.pdf
 ```
 
-Re-run it after any change to `steampunkResume` and commit the regenerated PDFs.
+It needs Chromium. Without it the step warns and skips rather than failing the build, so commit the regenerated PDFs whenever the page changes.
 
 The website is generated, not hand-edited. After any change to `main.tex`, run `npm run sync` (or just `npm run build`) to refresh `resumeData.ts`.
 
