@@ -1,0 +1,140 @@
+<template>
+  <a
+    class="pdf-export"
+    href={pdfHref}
+    download="andrewsolomon-steampunk-resume.pdf"
+    aria-label="Download Andrew Solomon's Steampunk resume as a PDF"
+  >
+    <svg class="pdf-export-icon" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
+      <path d="M7 1.5v7.4M3.6 5.5 7 8.9l3.4-3.4M2.5 11.5h9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" stroke-linejoin="miter"/>
+    </svg>
+    <span class="pdf-export-label">Export PDF</span>
+  </a>
+  <c-top-controls
+    theme={theme}
+    onthemetoggle={handleThemeToggle}
+  ></c-top-controls>
+
+  <main class="resume" aria-label="Andrew Solomon — Resume">
+    <header class="title-block">
+      <h1 class="title-line">
+        <template lwc:if={hasNameLink}>
+          <a
+            class="name name-link"
+            href={nameHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Andrew Solomon on LinkedIn"
+          >{header.name}</a>
+        </template>
+        <template lwc:else>
+          <span class="name">{header.name}</span>
+        </template>
+      </h1>
+      <p class="subtitle">{header.subtitle}</p>
+      <hr class="hairline title-rule" />
+    </header>
+
+    <section class="block">
+      <h2 class="section-header">Summary</h2>
+      <p class="prose">{summary}</p>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Highlights</h2>
+      <ul class="bullets bullets-compact">
+        <template for:each={highlights} for:item="item">
+          <li key={item.key}>{item.text}</li>
+        </template>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Technical Skills</h2>
+      <ul class="skills">
+        <template for:each={skills} for:item="s">
+          <li key={s.key}><span class="skill-label">{s.label}</span> {s.value}</li>
+        </template>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Experience</h2>
+      <template for:each={experience} for:item="e">
+        <article key={e.key} class="event">
+          <header class="event-header">
+            <h3 class="event-title-line">
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
+            </h3>
+            <time class="event-date">{e.date}</time>
+          </header>
+          <hr class="hairline" />
+          <ul class="bullets">
+            <template for:each={e.bullets} for:item="b">
+              <li key={b.key}>{b.text}</li>
+            </template>
+          </ul>
+          <template lwc:if={e.hasEngagements}>
+            <template for:each={e.engagements} for:item="g">
+              <section key={g.key} class="engagement" aria-label={g.label}>
+                <p class="engagement-label">{g.label}</p>
+                <header class="event-header">
+                  <h4 class="event-title-line engagement-title-line">
+                    <strong class="event-title">{g.title}</strong><span class="event-company-sep">{g.companySeparator}</span><template lwc:if={g.hasCompanyLink}><a
+                        class="event-company event-company-link"
+                        href={g.companyHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >{g.company}</a></template><template lwc:else><span class="event-company">{g.company}</span></template>
+                  </h4>
+                  <time class="event-date">{g.date}</time>
+                </header>
+                <ul class="bullets">
+                  <template for:each={g.bullets} for:item="b">
+                    <li key={b.key}>{b.text}</li>
+                  </template>
+                </ul>
+              </section>
+            </template>
+          </template>
+        </article>
+      </template>
+    </section>
+
+    <section class="block">
+      <h2 class="section-header">Education</h2>
+      <template for:each={education} for:item="e">
+        <article key={e.key} class="event">
+          <header class="event-header">
+            <h3 class="event-title-line">
+              <strong class="event-title">{e.title}</strong><span class="event-company-sep">{e.companySeparator}</span><template lwc:if={e.hasCompanyLink}><a
+                  class="event-company event-company-link"
+                  href={e.companyHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >{e.company}</a></template><template lwc:else><span class="event-company">{e.company}</span></template>
+            </h3>
+            <time class="event-date">{e.date}</time>
+          </header>
+          <hr class="hairline" />
+          <ul class="bullets">
+            <template for:each={e.bullets} for:item="b">
+              <li key={b.key}>{b.text}</li>
+            </template>
+          </ul>
+        </article>
+      </template>
+    </section>
+
+    <footer class="footer">
+      <template for:each={footerLinks} for:item="f">
+        <a key={f.key} class="footer-link" href={f.href}>{f.label}</a>
+      </template>
+    </footer>
+  </main>
+</template>

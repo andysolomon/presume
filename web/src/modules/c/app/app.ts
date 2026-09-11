@@ -5,6 +5,7 @@ type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'resume-theme';
 const GOVERNMENT_PAGE_HREF = '/government-experience';
 const KAPITUS_PAGE_HREF = '/kapitus';
+const STEAMPUNK_PAGE_HREF = '/steampunk';
 
 type RenderedMeta = {
   key: string;
@@ -102,6 +103,10 @@ export default class App extends LightningElement {
 
   get kapitusPageHref(): string {
     return KAPITUS_PAGE_HREF;
+  }
+
+  get steampunkPageHref(): string {
+    return STEAMPUNK_PAGE_HREF;
   }
 
   get pdfHref(): string {

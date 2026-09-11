@@ -36,6 +36,20 @@ Other scripts:
 - `npm run web:install` — install web deps (run once)
 - `npm run clean` — remove LaTeX aux files and LWR build output
 
+### Tailored routes
+
+Besides `/`, the site serves tailored views at `/government-experience`, `/kapitus`, and `/steampunk`. Each is an LWC under `web/src/modules/c/` that reuses the generated resume data with its own framing.
+
+The `/steampunk` PDF is printed from the page itself (so it always matches what the route renders) rather than from LaTeX:
+
+```bash
+npm install            # installs Playwright (root devDependency)
+npm run web:build
+npm run pdf:steampunk  # writes web/src/assets/andrewsolomon-steampunk{,-light}.pdf
+```
+
+Re-run it after any change to `steampunkResume` and commit the regenerated PDFs.
+
 The website is generated, not hand-edited. After any change to `main.tex`, run `npm run sync` (or just `npm run build`) to refresh `resumeData.ts`.
 
 ## Prerequisites

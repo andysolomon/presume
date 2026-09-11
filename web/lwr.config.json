@@ -41,6 +41,16 @@
         "title": "Andrew Solomon — Salesforce Engineer",
         "description": "Salesforce-focused resume view tailored for Kapitus — Sales Cloud, Experience Cloud, LWC, Apex, Triggers, Batch Apex, integrations (REST/SOAP/Bulk), DevOps, and agile delivery."
       }
+    },
+    {
+      "id": "steampunk",
+      "path": "/steampunk",
+      "rootComponent": "c/steampunkResume",
+      "layoutTemplate": "$rootDir/src/layouts/main.html",
+      "properties": {
+        "title": "Andrew Solomon — Principal Salesforce Engineer",
+        "description": "Resume prepared for Steampunk — federal Salesforce delivery (VA PSIP, VBA QMS), secure Apex and LWC architecture, Experience Cloud, and 2GP package engineering via Arcnology."
+      }
     }
   ]
 }

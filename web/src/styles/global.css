@@ -70,3 +70,10 @@ a:focus-visible {
   background: var(--color-accent-soft);
   color: var(--color-type);
 }
+
+/* Print: let the document end where the content ends (no trailing blank page). */
+@media print {
+  body {
+    min-height: auto;
+  }
+}
