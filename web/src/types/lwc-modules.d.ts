@@ -12,3 +12,14 @@ declare module 'c/resumeData' {
     FooterLink,
   } from '../modules/c/resumeData/resumeData';
 }
+
+declare module 'c/steampunkResumeData' {
+  const steampunkResumeData: import('../modules/c/steampunkResumeData/steampunkResumeData').SteampunkResumeData;
+  export default steampunkResumeData;
+  export type {
+    SteampunkResumeData,
+    SteampunkSkill,
+    SteampunkEvent,
+    SteampunkFooterLink,
+  } from '../modules/c/steampunkResumeData/steampunkResumeData';
+}
