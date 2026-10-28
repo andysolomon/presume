@@ -44,6 +44,8 @@ function deLatex(s) {
     .replace(/\\textbf\{([^{}]*)\}/g, '$1')
     .replace(/\\textit\{([^{}]*)\}/g, '$1')
     .replace(/\\emph\{([^{}]*)\}/g, '$1')
+    // Layout-only hints used to keep a bullet inside the measure. Not content.
+    .replace(/\\(?:linebreak|newline)\s*/g, '')
     // em-dash convention from LaTeX (`--`) becomes en-dash here; main.tex uses it for ranges.
     .replace(/ -- /g, ' — ')
     .replace(/--/g, '—')
@@ -252,20 +254,26 @@ function parseCvEvents(body) {
 }
 
 function parseFooter(src) {
-  // Footer lives inside `\colorbox{pagecol}{...}`; extract the \textcolor{sectcol}{slug} entries.
-  const cb = src.indexOf('\\colorbox{pagecol}');
-  if (cb === -1) return [];
-  const region = src.slice(cb);
-  const re = /\\textcolor\{sectcol\}\{([^}]+)\}/g;
+  // The artificial footer is the last centered block. Each link is an \href whose
+  // visible label may be wrapped in \textcolor. Prefer the explicit URL over
+  // guessing one from the label (the LinkedIn slug is not the full profile URL).
+  const marker = src.lastIndexOf('\\begin{center}');
+  if (marker === -1) return [];
+  const region = src.slice(marker);
+  const re = /\\href\{/g;
   const links = [];
   let m;
   while ((m = re.exec(region))) {
-    const value = deLatex(m[1]);
-    if (value.includes('linkedin.com')) {
-      links.push({ label: value, href: 'https://' + value });
-    } else if (value.includes('github.com')) {
-      links.push({ label: value, href: 'https://' + value });
+    let href;
+    try {
+      href = extractHref(region.slice(m.index));
+    } catch {
+      continue;
     }
+    if (!href) continue;
+    const label = deLatex(href.text);
+    if (!label) continue;
+    links.push({ label, href: href.url });
   }
   return links;
 }
@@ -284,6 +292,7 @@ function buildResume(tex) {
     skills: [],
     experience: [],
     education: [],
+    certifications: [],
     footer,
   };
 
@@ -297,6 +306,8 @@ function buildResume(tex) {
       result.experience = parseCvEvents(s.body);
     } else if (key === 'education') {
       result.education = parseCvEvents(s.body);
+    } else if (key === 'certifications' || key === 'certification') {
+      result.certifications = parseItemize(s.body);
     }
   }
   return result;
@@ -322,6 +333,7 @@ export type Resume = {
   skills: SkillItem[];
   experience: CvEvent[];
   education: CvEvent[];
+  certifications: SkillItem[];
   footer: FooterLink[];
 };
 
@@ -346,6 +358,8 @@ function main() {
     skills: resume.skills.length,
     experience: resume.experience.length,
     education: resume.education.length,
+    certifications: resume.certifications.length,
+    footer: resume.footer.length,
   };
   console.log(`parse-resume: wrote ${outPath}`);
   console.log(`  ${JSON.stringify(counts)}`);

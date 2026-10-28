@@ -115,6 +115,17 @@
       </template>
     </section>
 
+    <template lwc:if={hasCertifications}>
+      <section class="block">
+        <h2 class="section-header">Certifications</h2>
+        <ul class="skills">
+          <template for:each={certifications} for:item="s">
+            <li key={s.key}><template lwc:if={s.label}><span class="skill-label">{s.label}</span> </template>{s.value}</li>
+          </template>
+        </ul>
+      </section>
+    </template>
+
     <footer class="footer">
       <template for:each={footerLinks} for:item="f">
         <a key={f.key} class="footer-link" href={f.href}>{f.label}</a>

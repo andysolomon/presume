@@ -92,6 +92,15 @@ function renderMarkdown(resume) {
     lines.push('');
   }
 
+  if (resume.certifications?.length) {
+    lines.push('## Certifications');
+    lines.push('');
+    for (const cert of resume.certifications) {
+      lines.push(cert.label ? `- **${cert.label}:** ${cert.value}` : `- ${cert.value}`);
+    }
+    lines.push('');
+  }
+
   if (resume.footer?.length) {
     lines.push('---');
     lines.push('');

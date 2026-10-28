@@ -81,6 +81,18 @@ export default class App extends LightningElement {
     }));
   }
 
+  get certifications(): RenderedSkill[] {
+    return resume.certifications.map((s, i) => ({
+      key: `cert-${i}`,
+      label: s.label ? `${s.label}:` : '',
+      value: s.value,
+    }));
+  }
+
+  get hasCertifications(): boolean {
+    return this.certifications.length > 0;
+  }
+
   get experience(): RenderedEvent[] {
     return resume.experience.map((e, i) => this.toRenderedEvent(e, `exp-${i}`));
   }

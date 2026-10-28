@@ -17,6 +17,7 @@ export type Resume = {
   skills: SkillItem[];
   experience: CvEvent[];
   education: CvEvent[];
+  certifications: SkillItem[];
   footer: FooterLink[];
 };
 
@@ -46,7 +47,7 @@ export const resume: Resume = {
   "skills": [
     {
       "label": "Salesforce",
-      "value": "Apex, LWC, SOQL, SOSL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, OmniStudio, 2GP Packages, Flow"
+      "value": "Apex, LWC, SOQL, SOSL, Trigger Frameworks, Async Apex, fflib, Experience Cloud, OmniStudio, 2GP Packages, Flow, Platform Events, Change Data Capture, Named Credentials, External Credentials, Query Plan, custom indexes, selective queries, large data volumes, data skew, Event Monitoring, HttpCalloutMock, Stub API"
     },
     {
       "label": "Design",
@@ -62,7 +63,7 @@ export const resume: Resume = {
     },
     {
       "label": "DevOps",
-      "value": "GitHub Actions, SonarQube, SFDX, Vercel, Jest, Playwright"
+      "value": "GitHub Actions, SonarQube, SFDX, Vercel, Jest, Playwright, Docker"
     },
     {
       "label": "Frontend",
@@ -70,7 +71,7 @@ export const resume: Resume = {
     },
     {
       "label": "Backend",
-      "value": "Node, Java, Java Spring Boot, Supabase, Cloudflare Workers, Vercel Functions, REST APIs, AWS S3, AWS DynamoDB"
+      "value": "Node, Java, Java Spring Boot, Supabase, Cloudflare Workers, Vercel Functions, REST APIs, integration middleware, AWS S3, AWS DynamoDB"
     }
   ],
   "experience": [
@@ -87,7 +88,12 @@ export const resume: Resume = {
         "Established design alignment mapping between Figma, SLDS 1, and SLDS 2 to standardize tokens across the design system",
         "Established Apex and LWC testing standards, including dependency-isolated unit tests, templated Jest guidance, and Playwright browser automation for end-to-end coverage",
         "Mentored engineers on AI engineering and modern Node/TypeScript across platform, web, and internal dev tooling",
-        "Authored engineering, DevOps, and Salesforce documentation; drove cross-team feedback loops with design and customers in Agile/Kanban"
+        "Authored engineering, DevOps, and Salesforce documentation; drove cross-team feedback loops with design and customers in Agile/Kanban",
+        "Wrote selective SOQL against large-data-volume objects. Used the Query Plan tool to validate selectivity and set custom indexes where needed.",
+        "Diagnosed and mitigated ownership and lookup data skew to prevent record-lock contention and sharing-recalculation problems.",
+        "Built event-driven integrations on Platform Events and Change Data Capture, with idempotent processing (dedupe keys, safe retries) to guard against duplicate or replayed messages.",
+        "Secured outbound callouts with Named Credentials and External Credentials, keeping secrets and auth out of Apex code.",
+        "Led production triage in live orgs using debug logs and Event Monitoring. Reproduced issues across sandboxes and orgs and resolved failed deployments independently."
       ]
     },
     {
@@ -101,7 +107,8 @@ export const resume: Resume = {
         "Developed Apex-backed real-time analytics dashboard processing 1M+ daily transactions with 99.9% uptime",
         "Implemented Apex and Jest testing suites achieving 95% code coverage and WCAG 2.1 compliance",
         "Built GraphQL-powered headless CMS integration, reducing content update time by 60%",
-        "Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications"
+        "Designed component library based on IBM Carbon Design System, deployed across 3 customer-facing applications",
+        "Built integrations between Salesforce and external systems through integration middleware."
       ]
     },
     {
@@ -126,7 +133,9 @@ export const resume: Resume = {
         "Refactored 15+ test classes to least-privilege, persona-based security testing",
         "Implemented fflib Selector, Domain, and Service patterns with CRUD/FLS enforcement across SOQL query paths",
         "Replaced custom Apex permission checks with FeatureManagement.checkPermission() and modernized Workflow Rules to before-save Flows",
-        "Improved Apex test scores by 25-40 points, eliminated MIXED_DML_OPERATION failures via @testSetup, and stabilized tests around least-privilege users"
+        "Improved Apex test scores by 25-40 points, eliminated MIXED_DML_OPERATION failures via @testSetup, and stabilized tests around least-privilege users",
+        "Set criteria for choosing Flow or Apex, and resolved conflicts between automations by applying the Salesforce order of execution.",
+        "Isolated callout-dependent Apex in tests with HttpCalloutMock and the Stub API, covering success, failure, and bulk paths."
       ]
     },
     {
@@ -139,7 +148,8 @@ export const resume: Resume = {
         "Led UI and Apex architecture for 15+ projects using TypeScript, LWC, service classes, and trigger patterns, establishing core design systems",
         "Core contributor to Salesforce DevOps Center, improving deployment efficiency for 1000+ organizations",
         "Designed Apex integration and orchestration layers for AppExchange-grade managed package features while implementing Redux state management patterns that reduced component complexity by 40%",
-        "Mentored team of 8 developers in modern JavaScript practices and Salesforce development"
+        "Mentored team of 8 developers in modern JavaScript practices and Salesforce development",
+        "Mocked HTTP callouts with HttpCalloutMock and the Stub API to test AppExchange-grade managed-package integration code without live endpoints."
       ]
     },
     {
@@ -206,7 +216,22 @@ export const resume: Resume = {
       ]
     }
   ],
-  "footer": []
+  "certifications": [
+    {
+      "label": "Salesforce",
+      "value": "Platform Developer I"
+    }
+  ],
+  "footer": [
+    {
+      "label": "linkedin.com/in/andrew-solomon-44550a24",
+      "href": "https://www.linkedin.com/in/andrew-solomon-44550a24"
+    },
+    {
+      "label": "github.com/andysolomon",
+      "href": "https://github.com/andysolomon"
+    }
+  ]
 };
 
 export default resume;

@@ -168,6 +168,18 @@ export default class KapitusResume extends LightningElement {
     return resume.education.map((e, i) => this.toRenderedEvent(e, `edu-${i}`));
   }
 
+  get certifications(): RenderedSkill[] {
+    return resume.certifications.map((s, i) => ({
+      key: `cert-${i}`,
+      label: s.label ? `${s.label}:` : '',
+      value: s.value,
+    }));
+  }
+
+  get hasCertifications(): boolean {
+    return this.certifications.length > 0;
+  }
+
   get footerLinks(): RenderedFooter[] {
     return resume.footer.map((f, i) => ({
       key: `footer-${i}`,
